@@ -55,14 +55,26 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W5C-Pg-KJT">
                                 <rect key="frame" x="201" y="409" width="119" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bhs-dj-XmM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5Aq-1G-wOt"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xQ-Qw-iRp">
                                 <rect key="frame" x="201" y="301" width="119" height="78"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YmW-6x-EMS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6dI-17-sbr"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-jR-Jsu">
                                 <rect key="frame" x="201" y="541" width="119" height="78"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0hQ-5f-Wwv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KVq-fU-0Ga"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🕶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFQ-AE-ffV">
                                 <rect key="frame" x="349" y="209" width="34" height="36"/>
@@ -92,6 +104,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2f-Jk-QHs">
+                                <rect key="frame" x="74" y="738" width="266" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.79607843137254897" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Nästa gren">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="NextGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zK0-0q-fa0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqR-aV-YWT">
+                                <rect key="frame" x="90" y="90" width="234" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.44313725490196076" green="0.71372549019607845" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -102,6 +133,9 @@
                         <outlet property="NameLabelThree" destination="Yuw-IZ-nHq" id="aEw-NR-flp"/>
                         <outlet property="NameLabelTwo" destination="ipb-2c-1B1" id="mt7-H3-4NU"/>
                         <outlet property="PickerViewScore" destination="qHq-oU-89n" id="TQo-yE-HOF"/>
+                        <outlet property="PickerViewScore2" destination="9xQ-Qw-iRp" id="iWe-gx-Nbc"/>
+                        <outlet property="PickerViewScore3" destination="W5C-Pg-KJT" id="eLS-qL-Ic1"/>
+                        <outlet property="PickerViewScore4" destination="FNl-jR-Jsu" id="gQX-z0-qlx"/>
                         <outlet property="ScoreFour" destination="yIp-3v-hNm" id="TjJ-pr-fb4"/>
                         <outlet property="ScoreOne" destination="vFQ-AE-ffV" id="ald-zY-7M3"/>
                         <outlet property="ScoreThree" destination="MnT-Fg-d55" id="CZ2-NG-fcW"/>
