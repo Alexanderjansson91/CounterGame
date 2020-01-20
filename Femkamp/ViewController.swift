@@ -10,15 +10,29 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var ButtonPressed: UIButton!
+    @IBOutlet weak var LabelCompetitions: UILabel!
+    
+ var currentQuestionIndex = 0
+    
+   // var Comepetition = [Comepetitions(Comepetitions: "Omgång 1"),Comepetitions(Comepetitions: "Omgång 2"),Comepetitions(Comepetitions: "Omgång 3")]
+    let questions = ["1", "2", "3", "4"]
+
+    
     @IBOutlet weak var PickerViewScore2: UIPickerView!
     @IBOutlet weak var PickerViewScore3: UIPickerView!
     @IBOutlet weak var PickerViewScore4: UIPickerView!
     @IBOutlet weak var PickerViewScore: UIPickerView!
     
+    
     var person1 = Player(name: "alex", score: 0)
     var person2 = Player(name: "Lisa", score: 0)
     var person3 = Player(name: "Anders", score: 0)
     var person4 = Player(name: "Carola", score: 0)
+    
+    
+    
+  
     
     private var ScoreValues = (1...4).map{$0}
     
@@ -48,6 +62,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         NameLabelThree.text =  "\(person3.name)"
         NameLabelFour.text =  "\(person4.name)"
     }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
          return 1
@@ -83,10 +99,33 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func NextGameButton(_ sender: UIButton) {
         let row = PickerViewScore.selectedRow(inComponent: 0)
       resultsPerson1.append(ScoreValues[row])
-    print(resultsPerson1
-        )
+        let row2 = PickerViewScore2.selectedRow(inComponent: 0)
+            resultsPerson2.append(ScoreValues[row2])
+        let row3 = PickerViewScore3.selectedRow(inComponent: 0)
+        resultsPerson3.append(ScoreValues[row3])
+        let row4 = PickerViewScore4.selectedRow(inComponent: 0)
+        resultsPerson4.append(ScoreValues[row4])
+       // PickCompetitions ()
+        print(resultsPerson1)
+        print(resultsPerson2)
+        print(resultsPerson3)
+        print(resultsPerson4)
         
+      LabelCompetitions.text = questions[currentQuestionIndex]
+
+      if questions.count > 0{
+         currentQuestionIndex += 1
+         LabelCompetitions.text = questions [currentQuestionIndex]
+      }else{
+        performSegue(withIdentifier: "ResualtSegue", sender: nil)
+        }
+        
+        //self.performSegue(withIdentifier: "ResualtSegue", sender: self)
+           //  self.ButtonPressed.isHidden = true
+    
+
     }
     
-}
+    }
+
 

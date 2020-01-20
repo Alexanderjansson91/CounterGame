@@ -116,7 +116,7 @@
                                     <action selector="NextGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zK0-0q-fa0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqR-aV-YWT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqR-aV-YWT">
                                 <rect key="frame" x="90" y="90" width="234" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -128,6 +128,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ButtonPressed" destination="P2f-Jk-QHs" id="ArB-tz-UMP"/>
+                        <outlet property="LabelCompetitions" destination="JqR-aV-YWT" id="xDg-b2-Pix"/>
                         <outlet property="NameLabelFour" destination="Z1K-rh-6FC" id="gze-lB-wMK"/>
                         <outlet property="NameLabelOne" destination="EbG-5C-A21" id="XJB-kh-4En"/>
                         <outlet property="NameLabelThree" destination="Yuw-IZ-nHq" id="aEw-NR-flp"/>
@@ -144,7 +146,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+            <point key="canvasLocation" x="138" y="113"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="keC-CI-Lo5">
+            <objects>
+                <viewController id="BX2-HJ-ezE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eUC-WN-pQG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Clf-Ue-iVc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iKb-6c-FXm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3nL-d0-Imm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="113"/>
         </scene>
     </scenes>
 </document>
