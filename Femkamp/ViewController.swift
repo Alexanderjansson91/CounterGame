@@ -76,7 +76,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
           print("totalSum4 \(totalSum4)")
     }
    func AddArrayWhitPlayerScore (){
-  
     resultsPerson1 = [person1.score]
     resultsPerson2 = [person2.score]
     resultsPerson3 = [person3.score]
@@ -142,7 +141,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
         CountArray ()
         let vc = segue.destination as! ResualtViewController
         vc.finalName = self.person1.name
