@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     
-  
+
     
     private var ScoreValues = (1...4).map{$0}
     
@@ -51,6 +51,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var resultsPerson3 = [Int]()
     var resultsPerson4 = [Int]()
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         printNames ()
@@ -62,6 +65,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         NameLabelThree.text =  "\(person3.name)"
         NameLabelFour.text =  "\(person4.name)"
     }
+    func CountArray (){
+        let totalSum = resultsPerson1.reduce(0,+)
+        let totalSum2 = resultsPerson2.reduce(0,+)
+        let totalSum3 = resultsPerson3.reduce(0, +)
+        let totalSum4 = resultsPerson4.reduce(0, +)
+          print("totalSum \(totalSum)")
+          print("totalSum2 \(totalSum2)")
+          print("totalSum3 \(totalSum3)")
+          print("totalSum4 \(totalSum4)")
+    }
+   func AddArrayWhitPlayerScore (){
+  
+    resultsPerson1 = [person1.score]
+    resultsPerson2 = [person2.score]
+    resultsPerson3 = [person3.score]
+    resultsPerson4 = [person4.score]
+   }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
          return 1
     }
@@ -93,6 +113,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func NextGameButton(_ sender: UIButton)  {
       
         
+        
+        
+        
+        
         let row = PickerViewScore.selectedRow(inComponent: 0)
       resultsPerson1.append(ScoreValues[row])
         let row2 = PickerViewScore2.selectedRow(inComponent: 0)
@@ -118,10 +142,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        CountArray ()
         let vc = segue.destination as! ResualtViewController
         vc.finalName = self.person1.name
-    
+        vc.finalName2 = self.person2.name
+        vc.finalName3 = self.person3.name
+        vc.finalName4 = self.person4.name
+        
+        vc.finalResualt1 = self.person1.score
+        vc.finalResualt2 = self.person2.score
+        vc.finalResualt3 = self.person3.score
+        vc.finalResualt4 = self.person4.score
+ 
     }
-
-
-    }
+}
