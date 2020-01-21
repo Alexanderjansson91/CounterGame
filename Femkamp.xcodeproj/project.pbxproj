@@ -107,14 +107,14 @@
 			children = (
 				583EE48423D0F2B600E0F416 /* AppDelegate.swift */,
 				583EE48623D0F2B600E0F416 /* SceneDelegate.swift */,
-				583EE4B423D0F30500E0F416 /* Player.swift */,
 				581C3C9823D5A9260066AC18 /* Competitions.swift */,
+				583EE4B423D0F30500E0F416 /* Player.swift */,
+				581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */,
 				583EE48823D0F2B600E0F416 /* ViewController.swift */,
 				583EE48A23D0F2B600E0F416 /* Main.storyboard */,
 				583EE48D23D0F2B900E0F416 /* Assets.xcassets */,
 				583EE48F23D0F2B900E0F416 /* LaunchScreen.storyboard */,
 				583EE49223D0F2B900E0F416 /* Info.plist */,
-				581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */,
 			);
 			path = Femkamp;
 			sourceTree = "<group>";

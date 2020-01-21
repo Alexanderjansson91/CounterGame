@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
  var currentQuestionIndex = 0
     
    // var Comepetition = [Comepetitions(Comepetitions: "Omgång 1"),Comepetitions(Comepetitions: "Omgång 2"),Comepetitions(Comepetitions: "Omgång 3")]
-    let questions = ["1", "2", "3", "4"]
+    var questions = ["1", "2", "3", "4"]
 
     
     @IBOutlet weak var PickerViewScore2: UIPickerView!
@@ -62,22 +62,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         NameLabelThree.text =  "\(person3.name)"
         NameLabelFour.text =  "\(person4.name)"
     }
-    
-    
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
          return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        return ScoreValues.count
-            
     }
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return  "\(ScoreValues[row])"
     }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == PickerViewScore {
            ScoreOne.text = ("\(ScoreValues[row])")
@@ -96,7 +90,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
  
     
     
-    @IBAction func NextGameButton(_ sender: UIButton) {
+    @IBAction func NextGameButton(_ sender: UIButton)  {
+      
+        
         let row = PickerViewScore.selectedRow(inComponent: 0)
       resultsPerson1.append(ScoreValues[row])
         let row2 = PickerViewScore2.selectedRow(inComponent: 0)
@@ -112,20 +108,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         print(resultsPerson4)
         
       LabelCompetitions.text = questions[currentQuestionIndex]
-
-      if questions.count > 0{
-         currentQuestionIndex += 1
-         LabelCompetitions.text = questions [currentQuestionIndex]
-      }else{
-        performSegue(withIdentifier: "ResualtSegue", sender: nil)
+        
+        if currentQuestionIndex + 1 < questions.count {
+            currentQuestionIndex += 1
+        } else {
+            currentQuestionIndex = 0
+            performSegue(withIdentifier: "ResualtSegue", sender: nil)
         }
         
-        //self.performSegue(withIdentifier: "ResualtSegue", sender: self)
-           //  self.ButtonPressed.isHidden = true
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ResualtViewController
+        vc.finalName = self.person1.name
     
+    }
+
 
     }
-    
-    }
-
-

@@ -142,27 +142,40 @@
                         <outlet property="ScoreOne" destination="vFQ-AE-ffV" id="ald-zY-7M3"/>
                         <outlet property="ScoreThree" destination="MnT-Fg-d55" id="CZ2-NG-fcW"/>
                         <outlet property="ScoreTwo" destination="Krg-IH-O1j" id="8fd-vd-4L5"/>
+                        <segue destination="BX2-HJ-ezE" kind="show" identifier="ResualtSegue" id="fBZ-T4-yEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="113"/>
         </scene>
-        <!--View Controller-->
+        <!--Resualt View Controller-->
         <scene sceneID="keC-CI-Lo5">
             <objects>
-                <viewController id="BX2-HJ-ezE" sceneMemberID="viewController">
+                <viewController id="BX2-HJ-ezE" customClass="ResualtViewController" customModule="Femkamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eUC-WN-pQG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rum-O9-lKy">
+                                <rect key="frame" x="42" y="207" width="85" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Clf-Ue-iVc"/>
                     </view>
                     <navigationItem key="navigationItem" id="iKb-6c-FXm"/>
+                    <connections>
+                        <outlet property="NameLabel" destination="rum-O9-lKy" id="pFt-Ch-snd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nL-d0-Imm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="113"/>
+            <point key="canvasLocation" x="897.10144927536237" y="112.5"/>
         </scene>
     </scenes>
 </document>
