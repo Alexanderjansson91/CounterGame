@@ -9,7 +9,7 @@
 import UIKit
 
 class ResualtViewController: UIViewController {
-
+    
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var NameLabel2: UILabel!
     @IBOutlet weak var NameLabel3: UILabel!
@@ -27,9 +27,9 @@ class ResualtViewController: UIViewController {
     var finalName4 = ""
     
     var finalResualt1 = 0
-      var finalResualt2 = 0
-      var finalResualt3 = 0
-      var finalResualt4 = 0
+    var finalResualt2 = 0
+    var finalResualt3 = 0
+    var finalResualt4 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +47,9 @@ class ResualtViewController: UIViewController {
         
         
         
-       // let total = finalResualt1.reduce(0, +)
+        // let total = finalResualt1.reduce(0, +)
         
     }
     
-
+    
 }
