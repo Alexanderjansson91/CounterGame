@@ -7,32 +7,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="GbC-xq-VCn">
+        <!--Choice Competition-->
+        <scene sceneID="lMJ-qX-vEM">
             <objects>
-                <viewController id="W3X-Yc-0ZS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qzj-r0-Ryk">
+                <viewController id="REc-np-ILp" customClass="ChoiceCompetition" customModule="Femkamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hcH-Hl-yRd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-Qd-N6Y">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6J-jL-1kz">
                                 <rect key="frame" x="0.0" y="20" width="414" height="856"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonCellId" id="mUr-Ch-FXo">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mUr-Ch-FXo" id="uIc-kS-HXv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="REc-np-ILp" id="si7-IL-Kav"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8Iw-Qd-N6Y" firstAttribute="leading" secondItem="EkF-6M-4BC" secondAttribute="leading" id="3yI-0K-gJq"/>
-                            <constraint firstItem="8Iw-Qd-N6Y" firstAttribute="top" secondItem="Qzj-r0-Ryk" secondAttribute="top" constant="20" symbolic="YES" id="D8P-YO-3kx"/>
-                            <constraint firstAttribute="bottom" secondItem="8Iw-Qd-N6Y" secondAttribute="bottom" constant="20" symbolic="YES" id="VD1-lN-Fak"/>
-                            <constraint firstItem="8Iw-Qd-N6Y" firstAttribute="trailing" secondItem="EkF-6M-4BC" secondAttribute="trailing" id="rJh-HL-rSP"/>
+                            <constraint firstAttribute="bottom" secondItem="L6J-jL-1kz" secondAttribute="bottom" constant="20" symbolic="YES" id="Ina-cQ-ZwH"/>
+                            <constraint firstItem="L6J-jL-1kz" firstAttribute="trailing" secondItem="ht2-xX-Brw" secondAttribute="trailing" id="Kb1-qP-voP"/>
+                            <constraint firstItem="L6J-jL-1kz" firstAttribute="top" secondItem="hcH-Hl-yRd" secondAttribute="top" constant="20" symbolic="YES" id="Pd9-6m-odc"/>
+                            <constraint firstItem="L6J-jL-1kz" firstAttribute="leading" secondItem="ht2-xX-Brw" secondAttribute="leading" id="b9M-XO-QmE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EkF-6M-4BC"/>
+                        <viewLayoutGuide key="safeArea" id="ht2-xX-Brw"/>
                     </view>
+                    <connections>
+                        <outlet property="TableViewComepettition" destination="L6J-jL-1kz" id="ep9-TT-qrn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IHd-Mp-QdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTo-lj-LES" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1326.0869565217392" y="112.5"/>
+            <point key="canvasLocation" x="-1117.3913043478262" y="112.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

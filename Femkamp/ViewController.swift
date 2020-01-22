@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var person3 = Player(name: "Anders", score: 0)
     var person4 = Player(name: "Carola", score: 0)
     
-    private var ScoreValues = (1...4).map{$0}
+    private var ScoreValues = (1...100).map{$0}
     
     @IBOutlet weak var NameLabelOne: UILabel!
     @IBOutlet weak var NameLabelTwo: UILabel!

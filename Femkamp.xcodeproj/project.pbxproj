@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		581C3C9923D5A9260066AC18 /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C3C9823D5A9260066AC18 /* Competitions.swift */; };
 		581C3C9B23D5D0AC0066AC18 /* ResualtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */; };
+		58320BF423D87B93007DDFA2 /* ChoiceCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58320BF323D87B93007DDFA2 /* ChoiceCompetition.swift */; };
 		583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE48423D0F2B600E0F416 /* AppDelegate.swift */; };
 		583EE48723D0F2B600E0F416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE48623D0F2B600E0F416 /* SceneDelegate.swift */; };
 		583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE48823D0F2B600E0F416 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		581C3C9823D5A9260066AC18 /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResualtViewController.swift; sourceTree = "<group>"; };
+		58320BF323D87B93007DDFA2 /* ChoiceCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCompetition.swift; sourceTree = "<group>"; };
 		583EE48123D0F2B600E0F416 /* Femkamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Femkamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583EE48423D0F2B600E0F416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		583EE48623D0F2B600E0F416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				583EE48423D0F2B600E0F416 /* AppDelegate.swift */,
 				583EE48623D0F2B600E0F416 /* SceneDelegate.swift */,
+				58320BF323D87B93007DDFA2 /* ChoiceCompetition.swift */,
 				581C3C9823D5A9260066AC18 /* Competitions.swift */,
 				583EE4B423D0F30500E0F416 /* Player.swift */,
 				581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */,
@@ -271,6 +274,7 @@
 				583EE4B523D0F30500E0F416 /* Player.swift in Sources */,
 				583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */,
 				583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */,
+				58320BF423D87B93007DDFA2 /* ChoiceCompetition.swift in Sources */,
 				583EE48723D0F2B600E0F416 /* SceneDelegate.swift in Sources */,
 				581C3C9923D5A9260066AC18 /* Competitions.swift in Sources */,
 				581C3C9B23D5D0AC0066AC18 /* ResualtViewController.swift in Sources */,
