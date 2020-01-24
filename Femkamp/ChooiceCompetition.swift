@@ -11,6 +11,7 @@ import UIKit
 class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
   
+    @IBOutlet weak var ButtonChoice: UIButton!
     let GameSegue = "StartGameSegue"
     var Comepetition = [Comepetitions]()
     let CellId =  "CellId"
@@ -18,6 +19,8 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ButtonChoice.layer.cornerRadius = 14
+        ButtonChoice.clipsToBounds = true
         Comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
         Comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
         Comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
@@ -49,7 +52,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            selectedGames.remove(at: 1)
+        //    selectedGames.remove(at: 1)
   
             
             

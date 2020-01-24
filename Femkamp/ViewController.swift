@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var TextFieldCompInfo: UITextView!
     @IBOutlet weak var ButtonPressed: UIButton!
-    @IBOutlet weak var LabelCompetitions: UILabel!
+    
     
     var currentQuestionIndex = 0
     
@@ -54,10 +55,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ButtonPressed.layer.cornerRadius = 14
+        ButtonPressed.clipsToBounds = true
         printNames ()
         //  LabelCompetitions.text = "omgång 1"
         if let competition = questions?[currentQuestionIndex] {
-            LabelCompetitions.text = competition.ComepetitionsInfo
+            TextFieldCompInfo.text = competition.ComepetitionsInfo
         }
     }
     
@@ -115,6 +118,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func NextGameButton(_ sender: UIButton)  {
         
+        //UIButton.appearance().layer.cornerRadius = 20
+        
         
         let row = PickerViewScore.selectedRow(inComponent: 0)
         resultsPerson1.append(ScoreValues[row])
@@ -135,7 +140,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if currentQuestionIndex + 1 < quest.count  {
             
             currentQuestionIndex += 1
-            LabelCompetitions.text = quest[currentQuestionIndex].ComepetitionsInfo
+            TextFieldCompInfo.text = quest[currentQuestionIndex].ComepetitionsInfo
         } else {
             currentQuestionIndex = 0
             performSegue(withIdentifier: "ResualtSegue", sender: nil)

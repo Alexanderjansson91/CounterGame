@@ -58,6 +58,9 @@
                         <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ht2-xX-Brw"/>
                     </view>
+                    <connections>
+                        <outlet property="ButtonChoice" destination="DWN-s4-CUm" id="MsN-Xn-tVI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTo-lj-LES" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,13 +175,15 @@
                                     <action selector="NextGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zK0-0q-fa0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqR-aV-YWT">
-                                <rect key="frame" x="90" y="90" width="234" height="48"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-kt-C8B">
+                                <rect key="frame" x="20" y="59" width="363" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.44313725490196076" green="0.71372549019607845" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -186,7 +191,6 @@
                     <navigationItem key="navigationItem" id="mLY-Zj-9EZ"/>
                     <connections>
                         <outlet property="ButtonPressed" destination="P2f-Jk-QHs" id="ArB-tz-UMP"/>
-                        <outlet property="LabelCompetitions" destination="JqR-aV-YWT" id="xDg-b2-Pix"/>
                         <outlet property="NameLabelFour" destination="Z1K-rh-6FC" id="gze-lB-wMK"/>
                         <outlet property="NameLabelOne" destination="EbG-5C-A21" id="XJB-kh-4En"/>
                         <outlet property="NameLabelThree" destination="Yuw-IZ-nHq" id="aEw-NR-flp"/>
@@ -199,12 +203,13 @@
                         <outlet property="ScoreOne" destination="vFQ-AE-ffV" id="ald-zY-7M3"/>
                         <outlet property="ScoreThree" destination="MnT-Fg-d55" id="CZ2-NG-fcW"/>
                         <outlet property="ScoreTwo" destination="Krg-IH-O1j" id="8fd-vd-4L5"/>
+                        <outlet property="TextFieldCompInfo" destination="lDf-kt-C8B" id="3Y7-AL-3hS"/>
                         <segue destination="BX2-HJ-ezE" kind="show" identifier="ResualtSegue" id="fBZ-T4-yEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="113"/>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
         <!--Resualt View Controller-->
         <scene sceneID="keC-CI-Lo5">
