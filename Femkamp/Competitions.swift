@@ -11,10 +11,12 @@ import Foundation
 struct Comepetitions {
     
     var ComepetitionsOption : String
+    var ComepetitionsInfo : String
 
-    init(ComepetitionsOption: String) {
-           self.ComepetitionsOption=ComepetitionsOption
-        
+    init(ComepetitionsOption: String, ComepetitionsInfo : String) {
+            self.ComepetitionsOption=ComepetitionsOption
+            self.ComepetitionsInfo=ComepetitionsInfo
+    
        }
     
 }

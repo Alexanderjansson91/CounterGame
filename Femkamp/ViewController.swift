@@ -17,8 +17,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // var Comepetition = [Comepetitions(Comepetitions: "Omgång 1"),Comepetitions(Comepetitions: "Omgång 2"),Comepetitions(Comepetitions: "Omgång 3")]
     
-    var questions = ["omgång 1", "omgång 2", "omgång 3", "omgång 4"]
-    
+    var questions : [Comepetitions]?
+  //  var questions : ChooiceCompetition.competitions!
+
     
     @IBOutlet weak var PickerViewScore2: UIPickerView!
     @IBOutlet weak var PickerViewScore3: UIPickerView!
@@ -55,8 +56,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
         printNames ()
         //  LabelCompetitions.text = "omgång 1"
-        LabelCompetitions.text = questions[currentQuestionIndex]
-        
+        if let competition = questions?[currentQuestionIndex] {
+            LabelCompetitions.text = competition.ComepetitionsInfo
+        }
     }
     
     func printNames (){
@@ -128,12 +130,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         print(resultsPerson3)
         print(resultsPerson4)
         
+        guard let quest = questions else {return}
         
-        
-        if currentQuestionIndex + 1 < questions.count {
+        if currentQuestionIndex + 1 < quest.count  {
             
             currentQuestionIndex += 1
-            LabelCompetitions.text = questions[currentQuestionIndex ]
+            LabelCompetitions.text = quest[currentQuestionIndex].ComepetitionsInfo
         } else {
             currentQuestionIndex = 0
             performSegue(withIdentifier: "ResualtSegue", sender: nil)
