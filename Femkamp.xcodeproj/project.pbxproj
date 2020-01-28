@@ -19,6 +19,7 @@
 		583EE49C23D0F2BA00E0F416 /* FemkampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE49B23D0F2BA00E0F416 /* FemkampTests.swift */; };
 		583EE4A723D0F2BA00E0F416 /* FemkampUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE4A623D0F2BA00E0F416 /* FemkampUITests.swift */; };
 		583EE4B523D0F30500E0F416 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE4B423D0F30500E0F416 /* Player.swift */; };
+		5876016823DF1855005033B9 /* TeamNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876016723DF1855005033B9 /* TeamNamesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		583EE4A623D0F2BA00E0F416 /* FemkampUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FemkampUITests.swift; sourceTree = "<group>"; };
 		583EE4A823D0F2BA00E0F416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583EE4B423D0F30500E0F416 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5876016723DF1855005033B9 /* TeamNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamNamesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				583EE48D23D0F2B900E0F416 /* Assets.xcassets */,
 				583EE48F23D0F2B900E0F416 /* LaunchScreen.storyboard */,
 				583EE49223D0F2B900E0F416 /* Info.plist */,
+				5876016723DF1855005033B9 /* TeamNamesViewController.swift */,
 			);
 			path = Femkamp;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				583B506D23D9C84F007F7E00 /* ChooiceCompetition.swift in Sources */,
 				583EE4B523D0F30500E0F416 /* Player.swift in Sources */,
+				5876016823DF1855005033B9 /* TeamNamesViewController.swift in Sources */,
 				583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */,
 				583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */,
 				583EE48723D0F2B600E0F416 /* SceneDelegate.swift in Sources */,

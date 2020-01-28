@@ -84,8 +84,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func AddArrayWhitPlayerScore (){
         resultsPerson1 = [person1.score]
         resultsPerson2 = [person2.score]
-        resultsPerson3 = [person3.score]
-        resultsPerson4 = [person4.score]
+       resultsPerson3 = [person3.score]
+       resultsPerson4 = [person4.score]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -150,17 +150,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         CountArray ()
         let vc = segue.destination as! ResualtViewController
-        vc.finalName = self.person1.name
-        vc.finalName2 = self.person2.name
-        vc.finalName3 = self.person3.name
-        vc.finalName4 = self.person4.name
+//      vc.finalName = self.person1.name
+//       vc.finalName2 = self.person2.name
+//      vc.finalName3 = self.person3.name
+//      vc.finalName4 = self.person4.name
         
         
         print("\(person1.score)")
-        vc.finalResualt1 = self.person1.score
-        vc.finalResualt2 = self.person2.score
-        vc.finalResualt3 = self.person3.score
-        vc.finalResualt4 = self.person4.score
+       vc.finalResualt1 = self.person1.score
+       vc.finalResualt2 = self.person2.score
+       vc.finalResualt3 = self.person3.score
+      vc.finalResualt4 = self.person4.score
         
     }
 }
