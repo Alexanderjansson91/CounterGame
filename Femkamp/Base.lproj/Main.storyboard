@@ -15,16 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EPL-Z4-kOa">
-                                <rect key="frame" x="67" y="511" width="273" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DxY-GN-sGE">
-                                <rect key="frame" x="0.0" y="126" width="414" height="377"/>
+                                <rect key="frame" x="0.0" y="126" width="414" height="359"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewTeamCell" id="HRV-gE-ph1">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -32,6 +27,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HRV-gE-ph1" id="m1y-6I-qkt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -47,22 +43,49 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-Ea-ioh">
-                                <rect key="frame" x="348" y="511" width="55" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.10000000000000001" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-M7-upt">
+                                <rect key="frame" x="0.0" y="550" width="414" height="346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="plus.rectangle" catalog="system"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EPL-Z4-kOa">
+                                <rect key="frame" x="47" y="499" width="280" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-Ea-ioh">
+                                <rect key="frame" x="336" y="501" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="tintColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="plus.circle" catalog="system"/>
                                 <connections>
                                     <action selector="AddTeamButton:" destination="qnZ-wi-8Jn" eventType="touchUpInside" id="sIz-4R-tXk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st0-d1-tiY">
+                                <rect key="frame" x="374" y="501" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="tintColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="arrow.right.circle" catalog="system"/>
+                                <connections>
+                                    <segue destination="REc-np-ILp" kind="presentation" modalPresentationStyle="fullScreen" id="ldd-v0-HKL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Jcu-Z3-iCs"/>
+                        <viewLayoutGuide key="safeArea" id="NcV-k7-WNk"/>
                     </view>
                     <connections>
+                        <outlet property="AddButtonImage" destination="T2J-Ea-ioh" id="Kuo-Ix-Cuo"/>
                         <outlet property="InputNameTextField" destination="EPL-Z4-kOa" id="9pg-mC-wFa"/>
+                        <outlet property="MoveForwardArrow" destination="st0-d1-tiY" id="2gD-lw-rrb"/>
                         <outlet property="TableViewTeams" destination="DxY-GN-sGE" id="ar1-d6-diW"/>
                     </connections>
                 </viewController>
@@ -119,8 +142,9 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="ht2-xX-Brw"/>
+                        <viewLayoutGuide key="safeArea" id="Fq1-ed-dyb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="762-fJ-a2A"/>
                     <connections>
                         <outlet property="ButtonChoice" destination="DWN-s4-CUm" id="MsN-Xn-tVI"/>
                     </connections>
@@ -249,7 +273,7 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.44313725490196076" green="0.71372549019607845" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="tzE-is-0jt"/>
                     </view>
                     <navigationItem key="navigationItem" id="mLY-Zj-9EZ"/>
                     <connections>
@@ -347,7 +371,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Clf-Ue-iVc"/>
+                        <viewLayoutGuide key="safeArea" id="jKS-58-Jtb"/>
                     </view>
                     <navigationItem key="navigationItem" id="iKb-6c-FXm"/>
                     <connections>
@@ -367,6 +391,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus.rectangle" catalog="system" width="64" height="46"/>
+        <image name="arrow.right.circle" catalog="system" width="64" height="60"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>

@@ -66,11 +66,16 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
   
     }
     
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+          return true
+      }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             Comepetition.remove(at: indexPath.row)
             tableView.reloadData()
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
         }
     }
     
@@ -86,3 +91,4 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
 }
+

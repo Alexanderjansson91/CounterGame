@@ -11,6 +11,11 @@ import UIKit
 class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     var NumberOfTeams = 0
     let NewTeamCell =  "NewTeamCell"
+
+
+    @IBOutlet weak var AddButtonImage: UIButton!
+    @IBOutlet weak var MoveForwardArrow: UIButton!
+    
     
     @IBOutlet weak var InputNameTextField: UITextField!
     @IBOutlet weak var TableViewTeams: UITableView!
@@ -21,8 +26,12 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         InputNameTextField.becomeFirstResponder()
+       
+     
+
         // Do any additional setup after loading the view.
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return NewPlayer.count
@@ -45,6 +54,9 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         } else {
             NumberOfTeams = 0
         }
+        InputNameTextField.text = nil
+        view.endEditing(true)
+        InputNameTextField.becomeFirstResponder()
     }
     
     func InsertNewName(){
@@ -58,8 +70,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         TableViewTeams.insertRows(at: [indexPath], with: .automatic)
         //TableViewTeams.endUpdates()
         
-        InputNameTextField.text = ""
-        view.endEditing(true)
+        
         
         print(NewPlayer)
     }
