@@ -12,7 +12,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     var NumberOfTeams = 0
     let NewTeamCell =  "NewTeamCell"
 
-
+    
     @IBOutlet weak var AddButtonImage: UIButton!
     @IBOutlet weak var MoveForwardArrow: UIButton!
     
@@ -44,7 +44,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         
     }
-    
+    //button to add team
     @IBAction func AddTeamButton(_ sender: UIButton) {
         
         InsertNewName()
