@@ -16,6 +16,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     var Comepetition = [Comepetitions]()
     let CellId =  "CellId"
     var selectedGames = [Comepetitions]()
+    var Players : [Player]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,9 +86,9 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         //vc.questions = [selectedGames]
         // vc.questions = [selectedGames]
         if segue.identifier == "StartGameSegue" {
-            let destVC=segue.destination as! ViewController
+            let destVC=segue.destination as! GameViewController
             destVC.questions = selectedGames
-            
+            destVC.player = Players
         }
     }
 }

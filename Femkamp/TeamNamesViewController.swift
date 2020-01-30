@@ -20,15 +20,13 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var InputNameTextField: UITextField!
     @IBOutlet weak var TableViewTeams: UITableView!
    // var person = Player(name: nil, score: 0)
-    //var NewPLayer: [Player?] = []
     var NewPlayer : [Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         InputNameTextField.becomeFirstResponder()
        
-     
-
+    
         // Do any additional setup after loading the view.
     }
     
@@ -42,7 +40,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell.textLabel?.text = NewPlayer[indexPath.row].name
         return cell
         
-        
+       
     }
     //button to add team
     @IBAction func AddTeamButton(_ sender: UIButton) {
@@ -58,24 +56,15 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         view.endEditing(true)
         InputNameTextField.becomeFirstResponder()
     }
-    
-    func InsertNewName(){
-        //NewPLayer.append(InputNameTextField.text!)
-        NewPlayer.append( Player(name: InputNameTextField.text, score: 0))
 
+    func InsertNewName(){
         
+        NewPlayer.append( Player(name: InputNameTextField.text, score: 0))
         let indexPath = IndexPath(row: NewPlayer.count - 1, section: 0)
-        
-        //TableViewTeams.beginUpdates()
         TableViewTeams.insertRows(at: [indexPath], with: .automatic)
-        //TableViewTeams.endUpdates()
-        
-        
-        
+
         print(NewPlayer)
     }
-    
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -87,4 +76,12 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
             TableViewTeams.endUpdates()
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+           if segue.identifier == "TeamNamesSegue" {
+               let destVC=segue.destination as! ChooiceCompetition
+            destVC.Players = NewPlayer
+               
+           }
+       }
 }

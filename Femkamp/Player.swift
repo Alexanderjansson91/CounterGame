@@ -8,13 +8,18 @@
 
 import Foundation
 
-class Player {
+class Player : CustomStringConvertible{
     var name : String?
-     var score : Int
+    var score : Int
     
+    
+    public var description: String { return "\(name) : \(score)" }
+
     init(name: String?, score: Int) {
         self.name=name
         self.score=score
-            }
+    }
+    
     
 }
+
