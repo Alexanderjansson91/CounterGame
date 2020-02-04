@@ -80,8 +80,8 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
 
            if segue.identifier == "TeamNamesSegue" {
                let destVC=segue.destination as! ChooiceCompetition
-            destVC.Players = NewPlayer
-               
-           }
-       }
+               destVC.Players = NewPlayer
+            
+        }
+    }
 }
