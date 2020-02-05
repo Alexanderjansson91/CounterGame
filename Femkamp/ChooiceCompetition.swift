@@ -20,7 +20,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ButtonChoice.layer.cornerRadius = 14
+        ButtonChoice.layer.cornerRadius = 26
         ButtonChoice.clipsToBounds = true
         Comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
         Comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))

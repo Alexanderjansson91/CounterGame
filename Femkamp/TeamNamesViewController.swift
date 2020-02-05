@@ -84,4 +84,8 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
             
         }
     }
+    
+    @IBAction func InfoButton(_ sender: UIButton) {
+        InputNameTextField.resignFirstResponder()
+    }
 }
