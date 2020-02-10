@@ -11,12 +11,13 @@ import UIKit
 class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
   
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ButtonChoice: UIButton!
     let GameSegue = "StartGameSegue"
     var Comepetition = [Comepetitions]()
     let CellId =  "CellId"
     var selectedGames = [Comepetitions]()
-    var Players : [Player]?
+    var Players : [Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +81,11 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
+    
+
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //let vc = segue.destination as! ViewController
@@ -89,7 +95,13 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             let destVC=segue.destination as! GameViewController
             destVC.questions = selectedGames
             destVC.player = Players
-        }
+            
+//            if segue.identifier == "StartGameSegue" {
+//            let destVC2=segue.destination as!AddCompetitionViewController
+//
+//        }
     }
+    
 }
 
+}

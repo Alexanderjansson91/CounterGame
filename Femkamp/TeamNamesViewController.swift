@@ -12,6 +12,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     var NumberOfTeams = 0
     let NewTeamCell =  "NewTeamCell"
 
+
     
     @IBOutlet weak var AddButtonImage: UIButton!
     @IBOutlet weak var MoveForwardArrow: UIButton!
@@ -19,7 +20,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var InputNameTextField: UITextField!
     @IBOutlet weak var TableViewTeams: UITableView!
-   // var person = Player(name: nil, score: 0)
+   var person = Player(name: nil, score: 0)
     var NewPlayer : [Player] = []
     
     override func viewDidLoad() {
@@ -81,11 +82,18 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
            if segue.identifier == "TeamNamesSegue" {
                let destVC=segue.destination as! ChooiceCompetition
                destVC.Players = NewPlayer
-            
+
         }
     }
-    
+
     @IBAction func InfoButton(_ sender: UIButton) {
         InputNameTextField.resignFirstResponder()
     }
+    @IBAction func SaveTeamsButton(_ sender: UIButton) {
+        _ = UserDefaults.standard.object(forKey: "\(InputNameTextField.text!)listA")
+
+    }
+    
+
+    
 }

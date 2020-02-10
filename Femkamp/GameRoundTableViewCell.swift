@@ -28,4 +28,5 @@ class GameRoundTableViewCell: UITableViewCell {
         player?.score = Int(sender.value)
         scoreLabel.text = String(Int(sender.value))
     }
+    
 }

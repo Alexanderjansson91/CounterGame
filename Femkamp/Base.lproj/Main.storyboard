@@ -48,9 +48,9 @@
                                 <rect key="frame" x="20" y="550" width="374" height="321"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">Skippa papper och penna och förin resultat i en app istället. Först lägger man till dom lag man vill ska delta i spelet.                                                 Efter det så väljer du vilka grenar som ska spelas. 
+                                <string key="text">Skippa papper och penna och förin resultat i en app istället. Först lägger man till dom lag man vill ska delta i spelet.                                                 Efter det så väljer du vilka grenar som ska spelas. 
 Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan också lägga till valfria grenar som även sparas i appen. Efter att spelet är klart visas resultatet.                                          
-                                                                                              LÅT BÄSTA SPELARE VINNA!!🏆</mutableString>
+                                                                                              LÅT BÄSTA SPELARE VINNA!!🏆</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -72,6 +72,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="arrow.right.circle" catalog="system"/>
                                 <connections>
+                                    <action selector="SaveTeamsButton:" destination="qnZ-wi-8Jn" eventType="touchUpInside" id="Eei-wU-xeJ"/>
                                     <segue destination="REc-np-ILp" kind="presentation" identifier="TeamNamesSegue" modalPresentationStyle="fullScreen" id="ldd-v0-HKL"/>
                                 </connections>
                             </button>
@@ -128,7 +129,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <rect key="frame" x="0.0" y="183" width="414" height="483"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" id="61t-06-ths">
@@ -138,8 +139,8 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="tintColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -150,8 +151,8 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWN-s4-CUm">
                                 <rect key="frame" x="74" y="741" width="266" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <state key="normal" title="Starta spel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -159,13 +160,25 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                     <segue destination="7Vx-3K-vkJ" kind="presentation" identifier="StartGameSegue" modalPresentationStyle="fullScreen" id="gcm-TD-xRK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF7-DT-2BN">
+                                <rect key="frame" x="364" y="68" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="plus.app" catalog="system">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7Kc-bM-ogr" kind="show" identifier="AddNewGame" id="pI7-fH-xct"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fq1-ed-dyb"/>
                     </view>
                     <navigationItem key="navigationItem" id="762-fJ-a2A"/>
                     <connections>
                         <outlet property="ButtonChoice" destination="DWN-s4-CUm" id="MsN-Xn-tVI"/>
+                        <outlet property="tableView" destination="7eN-Wr-X5K" id="OA7-E7-zIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTo-lj-LES" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -187,28 +200,29 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <color key="separatorColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCellId" id="MJk-ed-zB1" customClass="GameRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCellId" rowHeight="70" id="MJk-ed-zB1" customClass="GameRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MJk-ed-zB1" id="PXQ-4H-cpi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="JZ1-mb-BGD">
+                                                    <rect key="frame" x="203" y="19" width="94" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <action selector="StepperCounter:" destination="MJk-ed-zB1" eventType="valueChanged" id="2e8-O7-5AJ"/>
+                                                    </connections>
+                                                </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h06-IZ-qZA">
-                                                    <rect key="frame" x="333" y="11" width="42" height="22"/>
+                                                    <rect key="frame" x="333" y="24" width="42" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="JZ1-mb-BGD">
-                                                    <rect key="frame" x="203" y="5" width="94" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <connections>
-                                                        <action selector="StepperCounter:" destination="MJk-ed-zB1" eventType="valueChanged" id="2e8-O7-5AJ"/>
-                                                    </connections>
-                                                </stepper>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -225,10 +239,10 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lsx-4C-42A">
                                 <rect key="frame" x="20" y="80" width="374" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4um-2Y-x9m">
@@ -243,6 +257,14 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                     <action selector="newCompetition:" destination="7Vx-3K-vkJ" eventType="touchUpInside" id="CSd-V5-7AH"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" text="__________________________________________________________" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D88-e5-1nF">
+                                <rect key="frame" x="20" y="180" width="374" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="F1U-lB-xKU"/>
@@ -257,7 +279,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpK-mZ-heX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="113"/>
+            <point key="canvasLocation" x="115.94202898550725" y="112.5"/>
         </scene>
         <!--Final Result View Controller-->
         <scene sceneID="JMb-pb-8ky">
@@ -324,12 +346,106 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                     </view>
                     <navigationItem key="navigationItem" id="K6M-nJ-32p"/>
                     <connections>
+                        <outlet property="finalScoreTableView" destination="Xxq-AT-Dvu" id="T4o-Sp-wDE"/>
                         <outlet property="startNewGame" destination="9cw-wj-amL" id="d0w-aC-J97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4Z-4b-G7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="911.59420289855075" y="112.5"/>
+        </scene>
+        <!--Add Competition View Controller-->
+        <scene sceneID="MDs-rm-0V3">
+            <objects>
+                <viewController id="7Kc-bM-ogr" customClass="AddCompetitionViewController" customModule="Femkamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sa5-Lk-WRv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-5L-iR8">
+                                <rect key="frame" x="54" y="226" width="307" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Namn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-oh-TCv">
+                                <rect key="frame" x="54" y="197" width="53" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXs-OZ-pyg">
+                                <rect key="frame" x="20" y="21" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="clear" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="7Kc-bM-ogr" eventType="touchUpInside" id="gwH-Kj-sSD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qld-b6-nVU">
+                                <rect key="frame" x="359" y="21" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="checkmark.square" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Save:" destination="7Kc-bM-ogr" eventType="touchUpInside" id="Owp-ku-LpG"/>
+                                    <segue destination="REc-np-ILp" kind="showDetail" identifier="saveSegue" id="bRh-8F-2qg"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lägg till en valfri gren som passar din önksemål." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-YC-ahF">
+                                <rect key="frame" x="37" y="112" width="340" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valfri gren " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-zx-KsC">
+                                <rect key="frame" x="135" y="52" width="145" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wk7-E7-PPm">
+                                <rect key="frame" x="54" y="297" width="307" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beskrivning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ5-7E-uRQ">
+                                <rect key="frame" x="54" y="268" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="lIJ-8U-cXZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o7u-7Q-eXs"/>
+                    <connections>
+                        <outlet property="AddNewCompetitionTextView" destination="wk7-E7-PPm" id="Jah-mq-avZ"/>
+                        <outlet property="addNewNameTextView" destination="NMb-5L-iR8" id="A7p-ze-G6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Eh-V5-PFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1117.3913043478262" y="-600"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -474,7 +590,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="-871"/>
+            <point key="canvasLocation" x="119" y="-2259"/>
         </scene>
         <!--Resualt View Controller-->
         <scene sceneID="keC-CI-Lo5">
@@ -565,12 +681,18 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nL-d0-Imm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="-871"/>
+            <point key="canvasLocation" x="912" y="-2259"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.right.circle" catalog="system" width="64" height="60"/>
+        <image name="checkmark.square" catalog="system" width="64" height="56"/>
+        <image name="clear" catalog="system" width="64" height="56"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="plus.app" catalog="system" width="64" height="56"/>
         <image name="plus.circle" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ldd-v0-HKL"/>
+    </inferredMetricsTieBreakers>
 </document>

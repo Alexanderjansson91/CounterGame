@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Player : CustomStringConvertible{
+class Player : CustomStringConvertible, Comparable{
+    
+    
     var name : String?
     var score : Int
     
@@ -18,6 +20,14 @@ class Player : CustomStringConvertible{
     init(name: String?, score: Int) {
         self.name=name
         self.score=score
+    }
+    
+    static func < (lhs: Player, rhs: Player) -> Bool {
+        return lhs.score > rhs.score
+    }
+
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.name == rhs.name && lhs.score == rhs.score
     }
     
     
