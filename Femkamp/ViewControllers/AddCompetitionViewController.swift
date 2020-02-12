@@ -10,6 +10,7 @@ import UIKit
 
 class AddCompetitionViewController: UIViewController {
     
+    var players : [Player] = []
     var competitions : [Comepetitions] = []
     @IBOutlet weak var addNewNameTextView: UITextField!
     @IBOutlet weak var AddNewCompetitionTextView: UITextView!
@@ -27,7 +28,7 @@ class AddCompetitionViewController: UIViewController {
     @IBAction func Save(_ sender: UIButton) {
         competitions.append( Comepetitions(ComepetitionsOption: addNewNameTextView.text!, ComepetitionsInfo: AddNewCompetitionTextView.text))
             //CompetitionVC?.refresh()
-            //dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
         print(competitions)
                             
         
@@ -43,6 +44,7 @@ class AddCompetitionViewController: UIViewController {
            if segue.identifier == "saveSegue" {
                let destVC=segue.destination as! ChooiceCompetition
                destVC.Comepetition = competitions
+               destVC.Players = players
         }
     }
 

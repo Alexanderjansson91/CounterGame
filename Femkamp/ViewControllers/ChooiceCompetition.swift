@@ -109,6 +109,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         if segue.identifier == "AddNewGame" {
             let destVC2=segue.destination as! AddCompetitionViewController
             destVC2.competitions = Comepetition
+            destVC2.players = Players
             
         }
     }
