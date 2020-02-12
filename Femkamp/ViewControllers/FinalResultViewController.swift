@@ -17,13 +17,11 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         startNewGame.layer.cornerRadius = 26
         startNewGame.clipsToBounds = true
-       
-        
-
         self.sortArray()
-        // Do any additional setup after loading the view.
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalResualt!.count
@@ -36,9 +34,8 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.finalScoreLabel.text = String(finalResualt![indexPath.row].score)
      
         return cell
-        
     }
-
+    
     func sortArray(){
         finalResualt?.sort()
         self.finalScoreTableView.reloadData()

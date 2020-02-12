@@ -17,12 +17,18 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var results : [Int] = []
     let GameCellId = "GameCellId"
     var player : [Player]? = []
+    var scoreLabel2 = GameRoundTableViewCell()
     //var person = Player(name: nil, score: 0)
     var questions : [Comepetitions]?
     @IBOutlet weak var TextFieldCompInfo: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(player!)
+        if let data = UserDefaults.standard.value(forKey:"players") as? Data {
+            _ = try? PropertyListDecoder().decode(Array<Player>.self, from: data)
+        }
         
         nextCompetition.layer.cornerRadius = 26
         nextCompetition.clipsToBounds = true
@@ -42,8 +48,8 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.textLabel?.text = player?[indexPath.row].name
         if let score = player?[indexPath.row].score {
             cell.scoreLabel?.text = String(score)
-           // cell.scoreLabel?.text =  "\(String(describing: person.score))"
-
+            // cell.scoreLabel?.text =  "\(String(describing: person.score))"
+            
         }
         cell.player = player?[indexPath.row]
         return cell
@@ -52,34 +58,41 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
-     func refresh(){
-          tabelViewGameRound.reloadData()
-      }
+    func refresh(){
+        tabelViewGameRound.reloadData()
+    }
     
-//    func connectResultArrayWhitPlayer(){
-//
-//        let score = 0
-//        results = [score]
-//
-//    }
-
-//    func countResultArray(){
-//        player?.score = results.reduce(0,+)
-//        person.score += 1
-//        results = [ person.score]
-//    }
+    //    func connectResultArrayWhitPlayer(){
+    //     results = [person.score]
+    //    }
+    //
+    //    func countResultArray(){
+    //     person.score = results.reduce(0,+)
+    //    }
+    //
+    //   func connectNameWhitLabel(){
+    //     scoreLabel2.scoreLabel?.text = "\(String(describing: person.score))"
+    //    }
     
-//   func connectNameWhitLabel(){
-//
-//    }
+    @IBAction func previewCompeition(_ sender: UIButton) {
+        
+        guard let quest = questions else {return}
+        
+        if currentCompetitionsIndex - 1 < quest.count  {
+            currentCompetitionsIndex -= 1
+            TextFieldCompInfo.text = quest[currentCompetitionsIndex].ComepetitionsInfo
+        } else {
+            currentCompetitionsIndex = 0
+            performSegue(withIdentifier: "resultSegue", sender: nil)
+        }
+        
+    }
     
     @IBAction func newCompetition(_ sender: UIButton)  {
-        //connectResultArrayWhitPlayer()
-        //countResultArray()
-      //  print(person)
-        print(results)
-        print(player as Any)
         
+        // results.append(String(describing: person.score))"
+        
+        print(results)
         guard let quest = questions else {return}
         
         if currentCompetitionsIndex + 1 < quest.count  {
@@ -90,15 +103,15 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
     }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //countResultArray()
+        print(results)
+        
         let vc = segue.destination as! FinalResultViewController
         vc.finalResualt = self.player
-      
+        
+        // vc.finalResualt1 = self.person.score
+        
     }
-   
-    
 }
 
 

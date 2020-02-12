@@ -10,7 +10,7 @@ import UIKit
 
 class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-  
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ButtonChoice: UIButton!
     let GameSegue = "StartGameSegue"
@@ -23,18 +23,20 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         ButtonChoice.layer.cornerRadius = 26
         ButtonChoice.clipsToBounds = true
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Skjut mot ett mål"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Kasta ring 🧿", ComepetitionsInfo: "kasta ring på en stång"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Kubb 🥢", ComepetitionsInfo: "Kasta ner kubb"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Äggkastarn 🥚", ComepetitionsInfo: "Kasta ägg mot varandra"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee 🥏", ComepetitionsInfo: "kasta mot en mål"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Boul 🎱", ComepetitionsInfo:  "kasta kulan mot ett mål"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Golf 🎹",ComepetitionsInfo: "sätt bollen nära ett hål"))
-        Comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "kasta freesbee i en basket korg"))
-        
+        if  Comepetition.count == 0 {
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Skjut mot ett mål"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Kasta ring 🧿", ComepetitionsInfo: "kasta ring på en stång"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Kubb 🥢", ComepetitionsInfo: "Kasta ner kubb"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Äggkastarn 🥚", ComepetitionsInfo: "Kasta ägg mot varandra"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee 🥏", ComepetitionsInfo: "kasta mot en mål"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Boul 🎱", ComepetitionsInfo:  "kasta kulan mot ett mål"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Golf 🎹",ComepetitionsInfo: "sätt bollen nära ett hål"))
+            Comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "kasta freesbee i en basket korg"))
+        }
+        print("David")
         // Do any additional setup after loading the view.
     }
     
@@ -54,8 +56,8 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-        //    selectedGames.remove(at: 1)
-  
+            //    selectedGames.remove(at: 1)
+            
             
             
         }else{
@@ -65,12 +67,15 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             print(selectedGames)
             
         }
-  
+        
+    }
+    func refresh(){
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-          return true
-      }
+        return true
+    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             Comepetition.remove(at: indexPath.row)
@@ -82,7 +87,8 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
-
+    
+    
     
     
     
@@ -94,14 +100,34 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         if segue.identifier == "StartGameSegue" {
             let destVC=segue.destination as! GameViewController
             destVC.questions = selectedGames
-            destVC.player = Players
+            print(selectedGames.count)
             
-//            if segue.identifier == "StartGameSegue" {
-//            let destVC2=segue.destination as!AddCompetitionViewController
-//
-//        }
+            destVC.player = Players
+            print(Players.count)
+            //destVC.CompetitionVC = selectedGames
+        }
+        if segue.identifier == "AddNewGame" {
+            let destVC2=segue.destination as! AddCompetitionViewController
+            destVC2.competitions = Comepetition
+            
+        }
     }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String,
+                                     sender: Any?) -> Bool{
+        
+        if selectedGames.isEmpty == true {
+            let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+                alert.dismiss(animated: true, completion: nil)}))
+            present(alert, animated: true,completion: nil)
+            return false
+            
+        }
+        else {
+            return true
+        }
+    }
 }
 
-}

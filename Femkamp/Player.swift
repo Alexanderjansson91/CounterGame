@@ -8,14 +8,18 @@
 
 import Foundation
 
-class Player : CustomStringConvertible, Comparable{
+class Player :NSObject, Decodable, Encodable, NSCoding, Comparable{
+  
+    
+    //CustomStringConvertible
+   // NSObject, NSCoding
     
     
     var name : String?
     var score : Int
     
     
-    public var description: String { return "\(name) : \(score)" }
+  // public var description: String { return "\(String(describing: name)) : \(score)" }
 
     init(name: String?, score: Int) {
         self.name=name
@@ -30,6 +34,20 @@ class Player : CustomStringConvertible, Comparable{
         return lhs.name == rhs.name && lhs.score == rhs.score
     }
     
-    
+func encode(with aCoder: NSCoder)
+   {
+       aCoder.encode(self.name, forKey: "name")
+       aCoder.encode(self.score, forKey: "score")
+   }
+
+   required init?(coder aDecoder: NSCoder)
+   {
+
+    self.name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
+    self.score = aDecoder.decodeInteger(forKey: "score")
+   }
 }
+    
+    
+
 

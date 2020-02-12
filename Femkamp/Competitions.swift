@@ -18,7 +18,10 @@ struct Comepetitions {
             self.ComepetitionsInfo=ComepetitionsInfo
     
        }
-    
+//    mutating func add(){
+//        ComepetitionsOption.append(Comepetitions)
+//    }
+//
 }
 
 

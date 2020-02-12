@@ -9,14 +9,12 @@
 import UIKit
 
 class AddCompetitionViewController: UIViewController {
-
-    var CompetitionVC : ChooiceCompetition?
-    var addNewComepetition = [Comepetitions]()
+    
+    var competitions : [Comepetitions] = []
     @IBOutlet weak var addNewNameTextView: UITextField!
     @IBOutlet weak var AddNewCompetitionTextView: UITextView!
-    
 
-    var competition = Comepetitions(ComepetitionsOption: " ", ComepetitionsInfo: " ")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         AddNewCompetitionTextView.becomeFirstResponder()
@@ -27,11 +25,11 @@ class AddCompetitionViewController: UIViewController {
         
     
     @IBAction func Save(_ sender: UIButton) {
-        addNewComepetition.append( Comepetitions(ComepetitionsOption: addNewNameTextView.text!, ComepetitionsInfo: AddNewCompetitionTextView.text))
-        
-//        CompetitionVC?.refresh()
-//        dismiss(animated: true, completion: nil)
-        print(addNewComepetition)
+        competitions.append( Comepetitions(ComepetitionsOption: addNewNameTextView.text!, ComepetitionsInfo: AddNewCompetitionTextView.text))
+            //CompetitionVC?.refresh()
+            //dismiss(animated: true, completion: nil)
+        print(competitions)
+                            
         
     }
     
@@ -44,10 +42,9 @@ class AddCompetitionViewController: UIViewController {
 
            if segue.identifier == "saveSegue" {
                let destVC=segue.destination as! ChooiceCompetition
-               destVC.Comepetition = addNewComepetition
-                
+               destVC.Comepetition = competitions
         }
     }
 
-    
 }
+
