@@ -12,17 +12,17 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var ButtonChoice: UIButton!
-    let GameSegue = "StartGameSegue"
+    @IBOutlet weak var buttonChoice: UIButton!
+    let gameSegue = "StartGameSegue"
     var Comepetition = [Comepetitions]()
     let CellId =  "CellId"
     var selectedGames = [Comepetitions]()
-    var Players : [Player] = []
+    var players : [Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ButtonChoice.layer.cornerRadius = 26
-        ButtonChoice.clipsToBounds = true
+        buttonChoice.layer.cornerRadius = 26
+        buttonChoice.clipsToBounds = true
         if  Comepetition.count == 0 {
             Comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
             Comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
@@ -46,7 +46,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath)
-        cell.textLabel?.text = Comepetition[indexPath.row].ComepetitionsOption
+        cell.textLabel?.text = Comepetition[indexPath.row].comepetitionsOption
         
         return cell
     }
@@ -102,14 +102,14 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             destVC.questions = selectedGames
             print(selectedGames.count)
             
-            destVC.player = Players
-            print(Players.count)
+            destVC.player = players
+            print(players.count)
             //destVC.CompetitionVC = selectedGames
         }
         if segue.identifier == "AddNewGame" {
             let destVC2=segue.destination as! AddCompetitionViewController
             destVC2.competitions = Comepetition
-            destVC2.players = Players
+            destVC2.players = players
             
         }
     }
@@ -117,18 +117,22 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool{
+ 
+    if identifier == "StartGameSegue" {
         
         if selectedGames.isEmpty == true {
+           
             let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
                 alert.dismiss(animated: true, completion: nil)}))
             present(alert, animated: true,completion: nil)
             return false
-            
         }
         else {
             return true
         }
     }
+        return true
+  }
 }
 

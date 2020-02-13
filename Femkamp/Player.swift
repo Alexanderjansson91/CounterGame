@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player :NSObject, Decodable, Encodable, NSCoding, Comparable{
+class Player : NSObject, Decodable, Encodable, NSCoding, Comparable{
   
     
     //CustomStringConvertible
@@ -17,13 +17,15 @@ class Player :NSObject, Decodable, Encodable, NSCoding, Comparable{
     
     var name : String?
     var score : Int
-    
+    //var scoreForEachRound = [Int]()
     
   // public var description: String { return "\(String(describing: name)) : \(score)" }
-
-    init(name: String?, score: Int) {
+//
+    //scoreForEachRound: [Int]
+    init(name: String?, score: Int ) {
         self.name=name
         self.score=score
+        //self.scoreForEachRound=scoreForEachRound
     }
     
     static func < (lhs: Player, rhs: Player) -> Bool {
@@ -33,7 +35,9 @@ class Player :NSObject, Decodable, Encodable, NSCoding, Comparable{
     static func == (lhs: Player, rhs: Player) -> Bool {
         return lhs.name == rhs.name && lhs.score == rhs.score
     }
+   
     
+
 func encode(with aCoder: NSCoder)
    {
        aCoder.encode(self.name, forKey: "name")

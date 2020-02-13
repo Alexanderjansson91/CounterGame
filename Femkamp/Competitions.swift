@@ -10,18 +10,14 @@ import Foundation
 
 struct Comepetitions {
     
-    var ComepetitionsOption : String
-    var ComepetitionsInfo : String
+    var comepetitionsOption : String
+    var comepetitionsInfo : String
 
     init(ComepetitionsOption: String, ComepetitionsInfo : String) {
-            self.ComepetitionsOption=ComepetitionsOption
-            self.ComepetitionsInfo=ComepetitionsInfo
+            self.comepetitionsOption=ComepetitionsOption
+            self.comepetitionsInfo=ComepetitionsInfo
     
        }
-//    mutating func add(){
-//        ComepetitionsOption.append(Comepetitions)
-//    }
-//
 }
 
 

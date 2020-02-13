@@ -13,20 +13,20 @@ class AddCompetitionViewController: UIViewController {
     var players : [Player] = []
     var competitions : [Comepetitions] = []
     @IBOutlet weak var addNewNameTextView: UITextField!
-    @IBOutlet weak var AddNewCompetitionTextView: UITextView!
+    @IBOutlet weak var addNewCompetitionTextView: UITextView!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        AddNewCompetitionTextView.becomeFirstResponder()
-        AddNewCompetitionTextView.becomeFirstResponder()
-        AddNewCompetitionTextView.layer.cornerRadius = 26
-        AddNewCompetitionTextView.clipsToBounds = true
+        addNewCompetitionTextView.becomeFirstResponder()
+        addNewCompetitionTextView.becomeFirstResponder()
+        addNewCompetitionTextView.layer.cornerRadius = 10
+        addNewCompetitionTextView.clipsToBounds = true
     }
         
     
     @IBAction func Save(_ sender: UIButton) {
-        competitions.append( Comepetitions(ComepetitionsOption: addNewNameTextView.text!, ComepetitionsInfo: AddNewCompetitionTextView.text))
+        competitions.append( Comepetitions(ComepetitionsOption: addNewNameTextView.text!, ComepetitionsInfo: addNewCompetitionTextView.text))
             //CompetitionVC?.refresh()
         //dismiss(animated: true, completion: nil)
         print(competitions)
@@ -44,7 +44,7 @@ class AddCompetitionViewController: UIViewController {
            if segue.identifier == "saveSegue" {
                let destVC=segue.destination as! ChooiceCompetition
                destVC.Comepetition = competitions
-               destVC.Players = players
+               destVC.players = players
         }
     }
 

@@ -10,22 +10,28 @@ import UIKit
 
 class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var previewButton: UIButton!
     var currentCompetitionsIndex = 0
     @IBOutlet weak var nextCompetition: UIButton!
-    var GameRoundTableViewcell = "GameRoundTableViewcell"
+    var gameRoundTableViewcell = "GameRoundTableViewcell"
     @IBOutlet weak var tabelViewGameRound: UITableView!
-    var results : [Int] = []
-    let GameCellId = "GameCellId"
+    var results = [Int]()
+    let gameCellId = "GameCellId"
     var player : [Player]? = []
     var scoreLabel2 = GameRoundTableViewCell()
-    //var person = Player(name: nil, score: 0)
+    //var person = Player(name: nil, score: 0, scoreForEachRound: [Int])
+    
+    //var PlayerEntry = Player(name: nil, score: 0)
+    
+    
     var questions : [Comepetitions]?
-    @IBOutlet weak var TextFieldCompInfo: UITextView!
+    @IBOutlet weak var textFieldCompInfo: UITextView!
+    @IBOutlet weak var headingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(player!)
+        //print(player!)
         if let data = UserDefaults.standard.value(forKey:"players") as? Data {
             _ = try? PropertyListDecoder().decode(Array<Player>.self, from: data)
         }
@@ -34,7 +40,8 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         nextCompetition.clipsToBounds = true
         
         if let competition = questions?[currentCompetitionsIndex] {
-            TextFieldCompInfo?.text = competition.ComepetitionsInfo
+            textFieldCompInfo?.text = competition.comepetitionsInfo
+            headingLabel.text = competition.comepetitionsOption
         }
     }
     
@@ -43,7 +50,7 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        let cell = tableView.dequeueReusableCell(withIdentifier: GameCellId, for: indexPath as IndexPath) as! GameRoundTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: gameCellId, for: indexPath as IndexPath) as! GameRoundTableViewCell
         
         cell.textLabel?.text = player?[indexPath.row].name
         if let score = player?[indexPath.row].score {
@@ -62,53 +69,77 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tabelViewGameRound.reloadData()
     }
     
-    //    func connectResultArrayWhitPlayer(){
-    //     results = [person.score]
-    //    }
-    //
-    //    func countResultArray(){
-    //     person.score = results.reduce(0,+)
-    //    }
-    //
-    //   func connectNameWhitLabel(){
-    //     scoreLabel2.scoreLabel?.text = "\(String(describing: person.score))"
-    //    }
+//        func connectResultArrayWhitPlayer(){
+//         results = [person.score]
+//        }
+//
+//        func countResultArray(){
+//            person.score = results.reduce(0,+)
+//        }
+//
+//       func connectNameWhitLabel(){
+//        scoreLabel2.scoreLabel?.text = "\(String(describing: person.score))"
+//        }
     
-    @IBAction func previewCompeition(_ sender: UIButton) {
+    @IBAction func previewCompeition(_ sender: UIButton)  {
+         
         
         guard let quest = questions else {return}
         
         if currentCompetitionsIndex - 1 < quest.count  {
             currentCompetitionsIndex -= 1
-            TextFieldCompInfo.text = quest[currentCompetitionsIndex].ComepetitionsInfo
+            textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
+            headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
+           
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
+        if currentCompetitionsIndex == 0{
+              previewButton.isHidden = true
+         }
+        
+      
         
     }
     
+
     @IBAction func newCompetition(_ sender: UIButton)  {
         
-        // results.append(String(describing: person.score))"
+    
+        //scoreLabel2.scoreLabel?.text?.append("\(String(describing: player))")
+//
+//        results.append(person.score)
+        
+        
         
         print(results)
+        
         guard let quest = questions else {return}
         
         if currentCompetitionsIndex + 1 < quest.count  {
             currentCompetitionsIndex += 1
-            TextFieldCompInfo.text = quest[currentCompetitionsIndex].ComepetitionsInfo
+            textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
+            headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
+        if currentCompetitionsIndex > 0{
+                 previewButton.isHidden = false
+            }
+        
     }
+    
+    
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(results)
         
         let vc = segue.destination as! FinalResultViewController
         vc.finalResualt = self.player
-        
+        //countResultArray()
         // vc.finalResualt1 = self.person.score
         
     }
