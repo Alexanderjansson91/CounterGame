@@ -18,7 +18,7 @@ class AddCompetitionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNewCompetitionTextView.becomeFirstResponder()
+        addNewNameTextView.becomeFirstResponder()
         addNewCompetitionTextView.becomeFirstResponder()
         addNewCompetitionTextView.layer.cornerRadius = 10
         addNewCompetitionTextView.clipsToBounds = true
@@ -43,7 +43,7 @@ class AddCompetitionViewController: UIViewController {
 
            if segue.identifier == "saveSegue" {
                let destVC=segue.destination as! ChooiceCompetition
-               destVC.Comepetition = competitions
+               destVC.comepetition = competitions
                destVC.players = players
         }
     }

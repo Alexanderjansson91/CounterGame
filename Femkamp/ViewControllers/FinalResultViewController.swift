@@ -14,6 +14,8 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var startNewGame: UIButton!
     let finalScoreCell = "finalScoreCell"
     var finalResualt : [Player]?
+    var emoji = ["🥇","🥈","🥉",]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,16 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         startNewGame.layer.cornerRadius = 26
         startNewGame.clipsToBounds = true
         self.sortArray()
+        
+        guard let players = finalResualt else {return}
+        
+        for player in players {
+            for score in player.scoreForEachRound{
+                player.score += score
+            }
+        }
+        
+        
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -17,12 +17,9 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var tabelViewGameRound: UITableView!
     var results = [Int]()
     let gameCellId = "GameCellId"
-    var player : [Player]? = []
+    var players : [Player]? = []
     var scoreLabel2 = GameRoundTableViewCell()
-    //var person = Player(name: nil, score: 0, scoreForEachRound: [Int])
-    
-    //var PlayerEntry = Player(name: nil, score: 0)
-    
+    var stepper2 = GameRoundTableViewCell()
     
     var questions : [Comepetitions]?
     @IBOutlet weak var textFieldCompInfo: UITextView!
@@ -30,11 +27,6 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //print(player!)
-        if let data = UserDefaults.standard.value(forKey:"players") as? Data {
-            _ = try? PropertyListDecoder().decode(Array<Player>.self, from: data)
-        }
         
         nextCompetition.layer.cornerRadius = 26
         nextCompetition.clipsToBounds = true
@@ -46,19 +38,18 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return player!.count
+        return players!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         let cell = tableView.dequeueReusableCell(withIdentifier: gameCellId, for: indexPath as IndexPath) as! GameRoundTableViewCell
         
-        cell.textLabel?.text = player?[indexPath.row].name
-        if let score = player?[indexPath.row].score {
+        cell.textLabel?.text = players?[indexPath.row].name
+        if let score = players?[indexPath.row].score {
             cell.scoreLabel?.text = String(score)
             // cell.scoreLabel?.text =  "\(String(describing: person.score))"
-            
         }
-        cell.player = player?[indexPath.row]
+        cell.player = players?[indexPath.row]
         return cell
     }
     
@@ -69,20 +60,20 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tabelViewGameRound.reloadData()
     }
     
-//        func connectResultArrayWhitPlayer(){
-//         results = [person.score]
-//        }
-//
-//        func countResultArray(){
-//            person.score = results.reduce(0,+)
-//        }
-//
-//       func connectNameWhitLabel(){
-//        scoreLabel2.scoreLabel?.text = "\(String(describing: person.score))"
-//        }
+    //        func connectResultArrayWhitPlayer(){
+    //         results = [person.score]
+    //        }
+    //        func countResultArray(){
+    //
+    //
+    //        }
+    //       func connectNameWhitLabel(){
+    //        scoreLabel2.scoreLabel?.text = "\(String(describing: Player?.self))"
+    //        //scoreLabel2.scoreLabel?.text = "\(String(describing: player.score))"
+    //        }
     
     @IBAction func previewCompeition(_ sender: UIButton)  {
-         
+        
         
         guard let quest = questions else {return}
         
@@ -90,29 +81,27 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             currentCompetitionsIndex -= 1
             textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
             headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
-           
+            
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
         if currentCompetitionsIndex == 0{
-              previewButton.isHidden = true
-         }
-        
-      
-        
+            previewButton.isHidden = true
+        }
     }
     
-
     @IBAction func newCompetition(_ sender: UIButton)  {
+        guard let players = players else {return}
         
+        for player in players {
+            player.scoreForEachRound.append(player.score)
+            player.score = 0
+            
+        }
     
-        //scoreLabel2.scoreLabel?.text?.append("\(String(describing: player))")
-//
-//        results.append(person.score)
-        
-        
-        
+        //stepper2.stepper.value = 0.0;
+        tabelViewGameRound.reloadData()
         print(results)
         
         guard let quest = questions else {return}
@@ -126,19 +115,16 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
         if currentCompetitionsIndex > 0{
-                 previewButton.isHidden = false
-            }
+            previewButton.isHidden = false
+        }
         
     }
-    
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(results)
         
         let vc = segue.destination as! FinalResultViewController
-        vc.finalResualt = self.player
+        vc.finalResualt = self.players
         //countResultArray()
         // vc.finalResualt1 = self.person.score
         

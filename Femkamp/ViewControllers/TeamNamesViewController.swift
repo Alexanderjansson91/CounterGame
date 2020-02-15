@@ -59,7 +59,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         let indexPath = IndexPath(row: newPlayer.count - 1, section: 0)
         tableViewTeams.insertRows(at: [indexPath], with: .automatic)
      
-        SaveTeams(["\([newPlayer])"])
+      //  SaveTeams(["\([newPlayer])"])
         print(newPlayer)
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -99,9 +99,9 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         inputNameTextField.resignFirstResponder()
     }
     
-    func SaveTeams(_:[ String ]){
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(newPlayer), forKey:"players")
-    }
+//    func SaveTeams(_:[ String ]){
+//        UserDefaults.standard.set(try? PropertyListEncoder().encode(newPlayer), forKey:"players")
+//    }
 }
  
 

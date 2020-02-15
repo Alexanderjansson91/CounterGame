@@ -87,7 +87,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FEM⚽️🏋️‍♂️KAMP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIF-Is-BJH">
-                                <rect key="frame" x="100" y="61" width="215.5" height="36"/>
+                                <rect key="frame" x="100" y="61" width="216" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -236,6 +236,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="scoreLabel" destination="h06-IZ-qZA" id="RWH-SR-djX"/>
+                                            <outlet property="stepper" destination="JZ1-mb-BGD" id="ofw-Lu-87Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -391,7 +392,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Namn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-oh-TCv">
-                                <rect key="frame" x="54" y="197" width="53" height="21"/>
+                                <rect key="frame" x="20" y="197" width="53" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -419,7 +420,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 </state>
                                 <connections>
                                     <action selector="Save:" destination="7Kc-bM-ogr" eventType="touchUpInside" id="Owp-ku-LpG"/>
-                                    <segue destination="REc-np-ILp" kind="showDetail" identifier="saveSegue" id="bRh-8F-2qg"/>
+                                    <segue destination="REc-np-ILp" kind="presentation" identifier="saveSegue" modalPresentationStyle="fullScreen" id="bRh-8F-2qg"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lägg till en valfri gren som passar din önksemål." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-YC-ahF">
@@ -438,22 +439,15 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wk7-E7-PPm">
-                                <rect key="frame" x="54" y="297" width="307" height="163"/>
+                                <rect key="frame" x="20" y="297" width="369" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beskrivning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ5-7E-uRQ">
-                                <rect key="frame" x="54" y="268" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-5L-iR8">
-                                <rect key="frame" x="54" y="221" width="307" height="44"/>
+                                <rect key="frame" x="20" y="221" width="369" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -461,6 +455,13 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beskrivning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ5-7E-uRQ">
+                                <rect key="frame" x="20" y="273" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="lIJ-8U-cXZ"/>
@@ -722,7 +723,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
         <image name="trash.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ldd-v0-HKL"/>
+        <segue reference="bRh-8F-2qg"/>
         <segue reference="uak-O9-tAW"/>
     </inferredMetricsTieBreakers>
 </document>

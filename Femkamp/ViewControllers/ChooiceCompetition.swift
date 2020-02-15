@@ -14,39 +14,42 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonChoice: UIButton!
     let gameSegue = "StartGameSegue"
-    var Comepetition = [Comepetitions]()
-    let CellId =  "CellId"
+    var comepetition = [Comepetitions]()
+    let cellId =  "CellId"
     var selectedGames = [Comepetitions]()
     var players : [Player] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // fetchArray()
         buttonChoice.layer.cornerRadius = 26
         buttonChoice.clipsToBounds = true
-        if  Comepetition.count == 0 {
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Skjut mot ett mål"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Kasta ring 🧿", ComepetitionsInfo: "kasta ring på en stång"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Kubb 🥢", ComepetitionsInfo: "Kasta ner kubb"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Äggkastarn 🥚", ComepetitionsInfo: "Kasta ägg mot varandra"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee 🥏", ComepetitionsInfo: "kasta mot en mål"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Boul 🎱", ComepetitionsInfo:  "kasta kulan mot ett mål"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Golf 🎹",ComepetitionsInfo: "sätt bollen nära ett hål"))
-            Comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "kasta freesbee i en basket korg"))
+        if  comepetition.count == 0 {
+            comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Skjut mot ett mål"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Kasta ring 🧿", ComepetitionsInfo: "kasta ring på en stång"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Kubb 🥢", ComepetitionsInfo: "Kasta ner kubb"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Äggkastarn 🥚", ComepetitionsInfo: "Kasta ägg mot varandra"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee 🥏", ComepetitionsInfo: "kasta mot en mål"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Boul 🎱", ComepetitionsInfo:  "kasta kulan mot ett mål"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Golf 🎹",ComepetitionsInfo: "sätt bollen nära ett hål"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "kasta freesbee i en basket korg"))
         }
         print("David")
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Comepetition.count
+        return comepetition.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath)
-        cell.textLabel?.text = Comepetition[indexPath.row].comepetitionsOption
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.textLabel?.text = comepetition[indexPath.row].comepetitionsOption
         
         return cell
     }
@@ -55,22 +58,28 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+           //  saveArray ()
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            //    selectedGames.remove(at: 1)
-            
-            
+            if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none {
+            selectedGames.remove(at: 0)
+            }
+     
             
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             
-            selectedGames.append(Comepetition[indexPath.row])
+            selectedGames.append(comepetition[indexPath.row])
+             
             print(selectedGames)
+
+              
             
         }
         
     }
     func refresh(){
         tableView.reloadData()
+        
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -78,7 +87,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            Comepetition.remove(at: indexPath.row)
+            comepetition.remove(at: indexPath.row)
             tableView.reloadData()
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -86,11 +95,17 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-    
-    
-    
-    
-    
+//    func saveArray () {
+//      UserDefaults.standard.set(comepetition, forKey: "games")
+//        let defaults = UserDefaults.standard
+//        defaults.set(selectedGames, forKey: "games")
+//        defaults.synchronize()
+//    }
+//    func fetchArray (){
+//        if let arr = UserDefaults.standard.array(forKey: "games") as? [String]{
+//            print(arr)
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -102,22 +117,22 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             destVC.questions = selectedGames
             print(selectedGames.count)
             
-            destVC.player = players
+            destVC.players = players
             print(players.count)
             //destVC.CompetitionVC = selectedGames
         }
         if segue.identifier == "AddNewGame" {
             let destVC2=segue.destination as! AddCompetitionViewController
-            destVC2.competitions = Comepetition
+            destVC2.competitions = comepetition
             destVC2.players = players
-            
+                  print(selectedGames)
         }
     }
     
     
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool{
- 
+    
     if identifier == "StartGameSegue" {
         
         if selectedGames.isEmpty == true {
