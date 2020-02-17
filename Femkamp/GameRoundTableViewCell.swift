@@ -11,7 +11,10 @@ import UIKit
 class GameRoundTableViewCell: UITableViewCell {
     
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var stepper: UIStepper? 
+    
+
+    var index: IndexPath?
     
     var player : Player?
     
@@ -19,7 +22,7 @@ class GameRoundTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -28,16 +31,7 @@ class GameRoundTableViewCell: UITableViewCell {
     @IBAction func StepperCounter(_ sender: UIStepper) {
         player?.score = Int(sender.value)
         scoreLabel.text = String(Int(sender.value))
-       
-//        @IBAction func resetScoreButton(_ sender: Any) {
-//           batsmenScoreStepper.value = 0.0;
-//           displayBatsmenOneScoreLabel.text = "\(batsmenScoreStepper.value)"
-//        }
-        
-         
-        
-        
-        
+        //stepper?.value = 0
     }
     
 }

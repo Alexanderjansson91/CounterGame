@@ -10,12 +10,12 @@ import UIKit
 
 class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    
     @IBOutlet weak var previewButton: UIButton!
     var currentCompetitionsIndex = 0
     @IBOutlet weak var nextCompetition: UIButton!
     var gameRoundTableViewcell = "GameRoundTableViewcell"
     @IBOutlet weak var tabelViewGameRound: UITableView!
-    var results = [Int]()
     let gameCellId = "GameCellId"
     var players : [Player]? = []
     var scoreLabel2 = GameRoundTableViewCell()
@@ -50,6 +50,12 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             // cell.scoreLabel?.text =  "\(String(describing: person.score))"
         }
         cell.player = players?[indexPath.row]
+        
+        if let score = players?[indexPath.row].score {
+            cell.scoreLabel.text = String(score)
+            cell.stepper?.value = Double(score)
+        }
+        
         return cell
     }
     
@@ -60,20 +66,15 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tabelViewGameRound.reloadData()
     }
     
-    //        func connectResultArrayWhitPlayer(){
-    //         results = [person.score]
-    //        }
-    //        func countResultArray(){
-    //
-    //
-    //        }
-    //       func connectNameWhitLabel(){
-    //        scoreLabel2.scoreLabel?.text = "\(String(describing: Player?.self))"
-    //        //scoreLabel2.scoreLabel?.text = "\(String(describing: player.score))"
-    //        }
-    
+    //When I Press this button I want to reset the stepper.
     @IBAction func previewCompeition(_ sender: UIButton)  {
         
+        guard let removeScore = players else {return}
+
+               for player in removeScore {
+                player.scoreForEachRound.remove(at: player.score)
+                   player.score = 0
+               }
         
         guard let quest = questions else {return}
         
@@ -92,24 +93,26 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     @IBAction func newCompetition(_ sender: UIButton)  {
+       
+        //print(stepper2.stepper?.value as Any//)
+        
+       stepper2.stepper?.value = 0
+     
         guard let players = players else {return}
         
         for player in players {
             player.scoreForEachRound.append(player.score)
             player.score = 0
-            
+           
         }
-    
-        //stepper2.stepper.value = 0.0;
         tabelViewGameRound.reloadData()
-        print(results)
-        
         guard let quest = questions else {return}
         
         if currentCompetitionsIndex + 1 < quest.count  {
             currentCompetitionsIndex += 1
             textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
             headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
+             
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
@@ -119,14 +122,16 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(results)
         
+        if segue.identifier == "resultSegue"{
         let vc = segue.destination as! FinalResultViewController
         vc.finalResualt = self.players
-        //countResultArray()
-        // vc.finalResualt1 = self.person.score
+        }
+        if segue.identifier == "highScoreSegue"{
+        let vc2 = segue.destination as! PopUpViewController
+           vc2.highScore = self.players
+        }
         
     }
 }

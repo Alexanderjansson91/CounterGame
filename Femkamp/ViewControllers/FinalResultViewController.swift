@@ -22,7 +22,7 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         
         startNewGame.layer.cornerRadius = 26
         startNewGame.clipsToBounds = true
-        self.sortArray()
+        
         
         guard let players = finalResualt else {return}
         
@@ -33,7 +33,7 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
         
-        
+        self.sortArray()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalResualt!.count
@@ -53,6 +53,8 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func sortArray(){
         finalResualt?.sort()
+        
         self.finalScoreTableView.reloadData()
+        
     }
 }
