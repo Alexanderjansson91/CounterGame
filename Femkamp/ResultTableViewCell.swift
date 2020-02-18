@@ -9,8 +9,8 @@
 import UIKit
 
 class ResultTableViewCell: UITableViewCell {
-    @IBOutlet weak var finalScoreLabel: UILabel!
     
+    @IBOutlet weak var finalScoreLabel: UILabel!
     var player : Player?
     
     override func awakeFromNib() {

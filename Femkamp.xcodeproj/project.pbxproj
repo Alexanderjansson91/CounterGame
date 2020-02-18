@@ -28,6 +28,7 @@
 		58940E1823EAC784005E0940 /* FinalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58940E1723EAC784005E0940 /* FinalResultViewController.swift */; };
 		58B86B2223FAEFE600819FD7 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2123FAEFE600819FD7 /* PopUpViewController.swift */; };
 		58B86B2523FAF25600819FD7 /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2423FAF25600819FD7 /* HighScoreTableViewCell.swift */; };
+		58B86B2723FB0C4A00819FD7 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2623FB0C4A00819FD7 /* Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		58940E1723EAC784005E0940 /* FinalResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultViewController.swift; sourceTree = "<group>"; };
 		58B86B2123FAEFE600819FD7 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		58B86B2423FAF25600819FD7 /* HighScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewCell.swift; sourceTree = "<group>"; };
+		58B86B2623FB0C4A00819FD7 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,13 +131,14 @@
 				583EE48623D0F2B600E0F416 /* SceneDelegate.swift */,
 				5880E05B23F3FEE700BA75D7 /* CELLS */,
 				5880E05C23F3FF7600BA75D7 /* ViewControllers */,
-				5880E05D23F3FFDF00BA75D7 /* Classes */,
 				58B86B2323FAEFF100819FD7 /* Pop Up */,
+				5880E05D23F3FFDF00BA75D7 /* Classes */,
 				583EE48A23D0F2B600E0F416 /* Main.storyboard */,
 				583EE48D23D0F2B900E0F416 /* Assets.xcassets */,
 				583EE48F23D0F2B900E0F416 /* LaunchScreen.storyboard */,
 				583EE49223D0F2B900E0F416 /* Info.plist */,
 				5813070E23F57E99001F1987 /* PlayerEntry.swift */,
+				58B86B2623FB0C4A00819FD7 /* Shared.swift */,
 				581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */,
 				583EE48823D0F2B600E0F416 /* ViewController.swift */,
 			);
@@ -335,6 +338,7 @@
 				5813070F23F57E99001F1987 /* PlayerEntry.swift in Sources */,
 				5846190E23E8546300DC635A /* GameRoundTableViewCell.swift in Sources */,
 				58940E1823EAC784005E0940 /* FinalResultViewController.swift in Sources */,
+				58B86B2723FB0C4A00819FD7 /* Shared.swift in Sources */,
 				583B506D23D9C84F007F7E00 /* ChooiceCompetition.swift in Sources */,
 				583EE4B523D0F30500E0F416 /* Player.swift in Sources */,
 				58B86B2523FAF25600819FD7 /* HighScoreTableViewCell.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 
 class Player : CustomStringConvertible, Comparable{
    
+    static let player = Player(name: nil, score: 0)
     var name : String?
     var score : Int
     var scoreForEachRound: [Int] = []

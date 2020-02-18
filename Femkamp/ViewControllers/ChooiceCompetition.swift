@@ -106,6 +106,9 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
 //            print(arr)
 //        }
 //    }
+    @IBAction func goBackToTeams(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

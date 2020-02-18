@@ -11,6 +11,7 @@ import UIKit
 class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
+    @IBOutlet weak var highScoreButton: UIButton!
     @IBOutlet weak var previewButton: UIButton!
     var currentCompetitionsIndex = 0
     @IBOutlet weak var nextCompetition: UIButton!
@@ -30,6 +31,9 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         nextCompetition.layer.cornerRadius = 26
         nextCompetition.clipsToBounds = true
+        //Shared.shared
+        let cn : String = Player.player.name ?? "Topplista 🏆"
+              highScoreButton.setTitle(cn,for: .normal)
         
         if let competition = questions?[currentCompetitionsIndex] {
             textFieldCompInfo?.text = competition.comepetitionsInfo
@@ -55,6 +59,7 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.scoreLabel.text = String(score)
             cell.stepper?.value = Double(score)
         }
+     
         
         return cell
     }
@@ -75,14 +80,13 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 player.scoreForEachRound.remove(at: player.score)
                    player.score = 0
                }
-        
+       
         guard let quest = questions else {return}
         
         if currentCompetitionsIndex - 1 < quest.count  {
             currentCompetitionsIndex -= 1
             textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
             headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
-            
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
@@ -92,11 +96,17 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
+    @IBAction func highScore(_ sender: UIButton) {
+        
+        
+       
+        
+    }
     @IBAction func newCompetition(_ sender: UIButton)  {
        
         //print(stepper2.stepper?.value as Any//)
         
-       stepper2.stepper?.value = 0
+       //stepper2.stepper?.value = 0
      
         guard let players = players else {return}
         
@@ -122,18 +132,24 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)   {
         
         if segue.identifier == "resultSegue"{
         let vc = segue.destination as! FinalResultViewController
         vc.finalResualt = self.players
+            
         }
-        if segue.identifier == "highScoreSegue"{
+                if segue.identifier == "highScoreSegue"{
         let vc2 = segue.destination as! PopUpViewController
-           vc2.highScore = self.players
+           
+            vc2.highScore = self.players
+            
+            }
+            
+        
         }
         
-    }
+
 }
 
 
