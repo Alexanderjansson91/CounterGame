@@ -14,43 +14,46 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var highScore : [Player]?
     let highScorecell = "highScorecell"
     @IBOutlet weak var popUpView: UIView!
-    //var highScore :  [Player]? = []
+//    var highScore :  [Player]? = []
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        
-        
         guard let players = highScore else {return}
         
-       
-        for player in players {
-            for score in player.scoreForEachRound{
-                player.score += score
-            }
-        }
-    sortHighScoreArray()
-    popUpView.layer.cornerRadius = 26
-    popUpView.clipsToBounds = true
-           
+        
+//        for player in players {
+//            for score in player.scoreForEachRound{
+//                //player.score += score
+//            }
+ //       }
+        
+        
+        sortHighScoreArray()
+        popUpView.layer.cornerRadius = 26
+        popUpView.clipsToBounds = true
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     return highScore!.count
+        
+        return highScore!.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "highScorecell" , for: indexPath) as! HighScoreTableViewCell
-      //  Player.player.name? = highScore?[indexPath.row].score
-           cell.textLabel?.text = highScore?[indexPath.row].name
-            cell.highScoreLabel.text = String(highScore![indexPath.row].score)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "highScorecell" , for: indexPath) as! HighScoreTableViewCell
+        //  Player.player.name? = highScore?[indexPath.row].score
+        cell.textLabel?.text = highScore?[indexPath.row].name
+        cell.highScoreLabel.text = String(highScore![indexPath.row].totalScore())
+        
         return cell
     }
     
+    
     @IBAction func closePopUp(_ sender: UIButton) {
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -60,5 +63,6 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
         self.popUpTableView.reloadData()
         
     }
+    
     
 }

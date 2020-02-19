@@ -29,11 +29,14 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nextCompetition.layer.cornerRadius = 26
-        nextCompetition.clipsToBounds = true
+        textFieldCompInfo.layer.cornerRadius = 10
+        textFieldCompInfo.clipsToBounds = true
+        
+        headingLabel.layer.cornerRadius = 10
+        headingLabel.clipsToBounds = true
+       
         //Shared.shared
-        let cn : String = Player.player.name ?? "Topplista 🏆"
-              highScoreButton.setTitle(cn,for: .normal)
+       
         
         if let competition = questions?[currentCompetitionsIndex] {
             textFieldCompInfo?.text = competition.comepetitionsInfo
@@ -98,7 +101,7 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBAction func highScore(_ sender: UIButton) {
         
-        
+      
        
         
     }
@@ -135,21 +138,15 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)   {
         
         if segue.identifier == "resultSegue"{
-        let vc = segue.destination as! FinalResultViewController
-        vc.finalResualt = self.players
+            let vc = segue.destination as! FinalResultViewController
+            vc.finalResualt = self.players
             
         }
-                if segue.identifier == "highScoreSegue"{
-        let vc2 = segue.destination as! PopUpViewController
-           
+        if segue.identifier == "highScoreSegue"{
+            let vc2 = segue.destination as! PopUpViewController
             vc2.highScore = self.players
-            
-            }
-            
-        
         }
-        
-
+    }
 }
 
 

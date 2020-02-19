@@ -20,6 +20,7 @@ class AddCompetitionViewController: UIViewController {
         super.viewDidLoad()
         addNewNameTextView.becomeFirstResponder()
         addNewCompetitionTextView.becomeFirstResponder()
+        
         addNewCompetitionTextView.layer.cornerRadius = 10
         addNewCompetitionTextView.clipsToBounds = true
     }

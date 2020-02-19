@@ -15,7 +15,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var addButtonImage: UIButton!
     @IBOutlet weak var moveForwardArrow: UIButton!
-    
+  
     
     @IBOutlet weak var inputNameTextField: UITextField!
     @IBOutlet weak var tableViewTeams: UITableView!
@@ -25,8 +25,17 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         inputNameTextField.becomeFirstResponder()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
     }
-    
+    @objc func keyboardWillShow(sender: NSNotification) {
+         self.inputNameTextField.frame.origin.y = -40 // Move view 150 points upward
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+         self.inputNameTextField.frame.origin.y = 0 // Move view to original position
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newPlayer.count
     }

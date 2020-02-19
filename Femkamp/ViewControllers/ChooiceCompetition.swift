@@ -27,7 +27,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         buttonChoice.layer.cornerRadius = 26
         buttonChoice.clipsToBounds = true
         if  comepetition.count == 0 {
-            comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Du kastar bollen i en hink"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Använd en valfri hink och boll. välj ett avstånd från hinken som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
             comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
             comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
             comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Skjut mot ett mål"))
