@@ -12,6 +12,11 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     var NumberOfTeams = 0
     let NewTeamCell =  "NewTeamCell"
 
+    @IBOutlet weak var keyboardConstrains: NSLayoutConstraint!
+    
+
+    
+  
     
     @IBOutlet weak var addButtonImage: UIButton!
     @IBOutlet weak var moveForwardArrow: UIButton!
@@ -24,18 +29,25 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         inputNameTextField.becomeFirstResponder()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+        inputNameTextField.delegate = self
+        
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+      
     }
-    @objc func keyboardWillShow(sender: NSNotification) {
-         self.inputNameTextField.frame.origin.y = -40 // Move view 150 points upward
-    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+          NotificationCenter.default.addObserver( self, selector: #selector(keyboardWasShown(notification:)), name:  UIResponder.keyboardWillShowNotification, object: nil )
 
-    @objc func keyboardWillHide(sender: NSNotification) {
-         self.inputNameTextField.frame.origin.y = 0 // Move view to original position
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver( self,name:  UIResponder.keyboardWillShowNotification, object: nil )
+
+    }
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newPlayer.count
     }
@@ -109,9 +121,24 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         inputNameTextField.resignFirstResponder()
     }
     
+    @objc func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.keyboardConstrains.constant = keyboardFrame.size.height
+            
+          
+         
+        })
+    }
+    
+
+    
 //    func SaveTeams(_:[ String ]){
 //        UserDefaults.standard.set(try? PropertyListEncoder().encode(newPlayer), forKey:"players")
 //    }
 }
  
+
 
