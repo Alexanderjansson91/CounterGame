@@ -24,6 +24,7 @@
 		583EE4A723D0F2BA00E0F416 /* FemkampUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE4A623D0F2BA00E0F416 /* FemkampUITests.swift */; };
 		583EE4B523D0F30500E0F416 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE4B423D0F30500E0F416 /* Player.swift */; };
 		5846190E23E8546300DC635A /* GameRoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5846190D23E8546300DC635A /* GameRoundTableViewCell.swift */; };
+		584D0D3F240404A300150826 /* ConfirmGamePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D0D3E240404A300150826 /* ConfirmGamePopUpViewController.swift */; };
 		5868887A23E313600039194D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5868887923E313600039194D /* GameViewController.swift */; };
 		5876016823DF1855005033B9 /* TeamNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876016723DF1855005033B9 /* TeamNamesViewController.swift */; };
 		58940E1823EAC784005E0940 /* FinalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58940E1723EAC784005E0940 /* FinalResultViewController.swift */; };
@@ -74,6 +75,7 @@
 		583EE4A823D0F2BA00E0F416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583EE4B423D0F30500E0F416 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5846190D23E8546300DC635A /* GameRoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoundTableViewCell.swift; sourceTree = "<group>"; };
+		584D0D3E240404A300150826 /* ConfirmGamePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmGamePopUpViewController.swift; sourceTree = "<group>"; };
 		5868887923E313600039194D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5876016723DF1855005033B9 /* TeamNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamNamesViewController.swift; sourceTree = "<group>"; };
 		58940E1723EAC784005E0940 /* FinalResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				58B86B2123FAEFE600819FD7 /* PopUpViewController.swift */,
 				58357B35240001A9002ABF32 /* FinalResultPopUpViewController.swift */,
+				584D0D3E240404A300150826 /* ConfirmGamePopUpViewController.swift */,
 			);
 			name = "Pop Up";
 			path = ViewControllers;
@@ -350,6 +353,7 @@
 				58B86B2523FAF25600819FD7 /* HighScoreTableViewCell.swift in Sources */,
 				589D482A240020D500401ACF /* ScoreForEachRoundTableViewCell.swift in Sources */,
 				5876016823DF1855005033B9 /* TeamNamesViewController.swift in Sources */,
+				584D0D3F240404A300150826 /* ConfirmGamePopUpViewController.swift in Sources */,
 				583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */,
 				5868887A23E313600039194D /* GameViewController.swift in Sources */,
 				583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */,

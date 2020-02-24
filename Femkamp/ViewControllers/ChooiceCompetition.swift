@@ -94,12 +94,10 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         //Segue for start a new game
-        if segue.identifier == "StartGameSegue" {
-            let destVC=segue.destination as! GameViewController
-            destVC.competitions = selectedGames
-            print(selectedGames.count)
+        if segue.identifier == "confirmGameSegue" {
+            let destVC=segue.destination as! ConfirmGamePopUpViewController
+            destVC.comepetition = selectedGames
             destVC.players = players
-            print(players.count)
         }
         //Segue for add a new competition
         if segue.identifier == "AddNewGame" {
@@ -112,7 +110,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     //If no competitions are add when segue "StartGameSegue" run, one alert window will show
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool{
-    if identifier == "StartGameSegue" {
+    if identifier == "confirmGameSegue" {
         if selectedGames.isEmpty == true {
             let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
