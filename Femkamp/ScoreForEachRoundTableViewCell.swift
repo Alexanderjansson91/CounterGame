@@ -1,29 +1,25 @@
 //
-//  HighScoreTableViewCell.swift
+//  ScoreForEachRoundTableViewCell.swift
 //  Femkamp
 //
-//  Created by Alexander Jansson on 2020-02-17.
+//  Created by Alexander Jansson on 2020-02-21.
 //  Copyright © 2020 Alexander Jansson. All rights reserved.
 //
 
 import UIKit
 
-class HighScoreTableViewCell: UITableViewCell {
+class ScoreForEachRoundTableViewCell: UITableViewCell {
 
-    var player : Player?
-    @IBOutlet weak var highScoreLabel: UILabel!
-    
+    @IBOutlet weak var scoreforEachRoundLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        /*
-         This my Tableviewcell for my  Higshcore
-         */
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
 
 }

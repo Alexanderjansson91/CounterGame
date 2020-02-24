@@ -12,17 +12,27 @@ class ResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var finalScoreLabel: UILabel!
     var player : Player?
+    @IBOutlet weak var scoreForEachRoundPopUp: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        /*
+         This my Tableviewcell for th finalscore
+        */
+        
+        
+        //set the label to players finalscore
         finalScoreLabel.text = "\(String(describing: player?.score))"
-        // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
+   
+    
 
 }

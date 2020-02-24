@@ -23,9 +23,10 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // fetchArray()
         buttonChoice.layer.cornerRadius = 26
         buttonChoice.clipsToBounds = true
+        
+        //Object for my comepetition array
         if  comepetition.count == 0 {
             comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Använd en valfri hink och boll. välj ett avstånd från hinken som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
             comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
@@ -39,23 +40,21 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             comepetition.append(Comepetitions(ComepetitionsOption: "Golf 🎹",ComepetitionsInfo: "sätt bollen nära ett hål"))
             comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "kasta freesbee i en basket korg"))
         }
-        print("David")
-        // Do any additional setup after loading the view.
     }
-    
+    //counts number of rows in array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comepetition.count
     }
-    
+    // Design and structure for tableviewcell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         cell.textLabel?.text = comepetition[indexPath.row].comepetitionsOption
-        
+        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
         return cell
     }
-    
+    //select and unselect, if row is unselected remove from selectedGames else append to selectedGames
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
            //  saveArray ()
@@ -63,28 +62,20 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none {
             selectedGames.remove(at: 0)
             }
-     
-            
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            
             selectedGames.append(comepetition[indexPath.row])
-             
-            print(selectedGames)
-
-              
-            
         }
-        
     }
+    //refresh tableView
     func refresh(){
         tableView.reloadData()
-        
     }
-    
+    //Making datasource editable in tableview
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    //if Row is
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             comepetition.remove(at: indexPath.row)
@@ -94,52 +85,35 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             tableView.endUpdates()
         }
     }
-    
-//    func saveArray () {
-//      UserDefaults.standard.set(comepetition, forKey: "games")
-//        let defaults = UserDefaults.standard
-//        defaults.set(selectedGames, forKey: "games")
-//        defaults.synchronize()
-//    }
-//    func fetchArray (){
-//        if let arr = UserDefaults.standard.array(forKey: "games") as? [String]{
-//            print(arr)
-//        }
-//    }
+ 
+    //Button to go back to "TeamNamesViewController"
     @IBAction func goBackToTeams(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
+    //All Information how wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //let vc = segue.destination as! ViewController
-        //vc.questions = [selectedGames]
-        // vc.questions = [selectedGames]
+
+        //Segue for start a new game
         if segue.identifier == "StartGameSegue" {
             let destVC=segue.destination as! GameViewController
-            destVC.questions = selectedGames
+            destVC.competitions = selectedGames
             print(selectedGames.count)
-            
             destVC.players = players
             print(players.count)
-            //destVC.CompetitionVC = selectedGames
         }
+        //Segue for add a new competition
         if segue.identifier == "AddNewGame" {
             let destVC2=segue.destination as! AddCompetitionViewController
             destVC2.competitions = comepetition
             destVC2.players = players
-                  print(selectedGames)
         }
     }
     
-    
+    //If no competitions are add when segue "StartGameSegue" run, one alert window will show
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool{
-    
     if identifier == "StartGameSegue" {
-        
         if selectedGames.isEmpty == true {
-           
             let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
                 alert.dismiss(animated: true, completion: nil)}))

@@ -15,23 +15,24 @@ class GameRoundTableViewCell: UITableViewCell {
     
 
     var index: IndexPath?
-    
     var player : Player?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        /*
+        This my Tableviewcell for the gameround
+        */
+        
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
+    //Stepper how sets value of score
     @IBAction func StepperCounter(_ sender: UIStepper) {
         player?.score = Int(sender.value)
         scoreLabel.text = String(Int(sender.value))
-        //stepper?.value = 0
     }
     
 }

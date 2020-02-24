@@ -14,34 +14,22 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var highScore : [Player]?
     let highScorecell = "highScorecell"
     @IBOutlet weak var popUpView: UIView!
-//    var highScore :  [Player]? = []
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let players = highScore else {return}
-        
-        
-//        for player in players {
-//            for score in player.scoreForEachRound{
-//                //player.score += score
-//            }
- //       }
-        
-        
+
         sortHighScoreArray()
         popUpView.layer.cornerRadius = 26
         popUpView.clipsToBounds = true
         
     }
     
+    //counts rows in tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return highScore!.count
-        
     }
     
+    // Design and structure for tableviewcell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "highScorecell" , for: indexPath) as! HighScoreTableViewCell
         //  Player.player.name? = highScore?[indexPath.row].score
@@ -51,15 +39,16 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
         return cell
     }
     
-    
+    //Close PopUp window
     @IBAction func closePopUp(_ sender: UIButton) {
         
         dismiss(animated: true, completion: nil)
     }
-    
+    //Sort highscore array
     func sortHighScoreArray(){
+      
         highScore?.sort()
-        
+   
         self.popUpTableView.reloadData()
         
     }
