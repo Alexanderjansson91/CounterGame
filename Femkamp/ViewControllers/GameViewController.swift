@@ -18,6 +18,7 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var gameRoundTableViewcell = "GameRoundTableViewcell"
     @IBOutlet weak var tabelViewGameRound: UITableView!
     let gameCellId = "GameCellId"
+    let previewButtonId = "previewButtonId"
     var players : [Player]? = []
     var scoreLabel2 = GameRoundTableViewCell()
     var stepper2 = GameRoundTableViewCell()
@@ -59,8 +60,6 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.scoreLabel.text = String(score)
             cell.stepper?.value = Double(score)
         }
-     
-        
         return cell
     }
     //Height of tableview
@@ -75,16 +74,19 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBAction func previewCompeition(_ sender: UIButton)  {
         
         guard let removeScore = players else {return}
-               for player in removeScore {
-                player.scoreForEachRound.remove(at: player.score)
-                   player.score = 0
-               }
+           for player in removeScore {
+            player.scoreForEachRound.removeLast()
+        }
         guard let quest = competitions else {return}
+        
         
         if currentCompetitionsIndex - 1 < quest.count  {
             currentCompetitionsIndex -= 1
             textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
             headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
+
+
+         
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
@@ -93,10 +95,22 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if currentCompetitionsIndex == 0{
             previewButton.isHidden = true
         }
+        alertPreviewButton()
+        sender.pulsate()
     }
+    
+    func alertPreviewButton() {
+        let alert = UIAlertController(title: "‼️", message: "Poängen på denna gren försvinner, så var vänlig och lägg poängen igen", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)}))
+        present(alert, animated: true,completion: nil)
+    }
+        
     //button for New competition, if you press this button you will also add score to "scoreForEachRound"
     @IBAction func newCompetition(_ sender: UIButton)  {
      
+        sender.pulsate()
+       
         guard let players = players else {return}
         for player in players {
             player.scoreForEachRound.append(player.score)

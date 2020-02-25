@@ -26,6 +26,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     //Keybaord will automatic show when page opens
         inputNameTextField.becomeFirstResponder()
         inputNameTextField.delegate = self
+    
     }
     //calling function keyboardWillShown
     override func viewWillAppear(_ animated: Bool) {
@@ -46,13 +47,22 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell.textLabel?.text = newPlayer[indexPath.row].name
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
-        
+      
         return cell
     }
     
+    @IBAction func moveToCompetitions(_ sender: UIButton) {
+        
+        if newPlayer.isEmpty {
+            sender.shake()
+        }else{
+            sender.pulsate()
+        }
+    }
     //button to add team
     @IBAction func AddTeamButton(_ sender: UIButton) {
         
+        sender.pulsate()
         InsertNewName()
         if NumberOfTeams + 1 < newPlayer.count {
             NumberOfTeams += 1
@@ -63,6 +73,8 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         inputNameTextField.text = nil
         view.endEditing(true)
         inputNameTextField.becomeFirstResponder()
+        sender.pulsate()
+        
     }
     
     //Append team name to array and tableview
@@ -72,6 +84,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         tableViewTeams.insertRows(at: [indexPath], with: .automatic)
         print(newPlayer)
     }
+        
     //Making datasource editable in tableview
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -111,8 +124,9 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     //Informtion button
     @IBAction func InfoButton(_ sender: UIButton) {
         inputNameTextField.resignFirstResponder()
+        sender.pulsate()
     }
-    
+        
     //Set the Menu just Above keybaord whit an animation
     @objc func keyboardWillShown(notification: NSNotification) {
         let info = notification.userInfo!

@@ -23,7 +23,7 @@
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewTeamCell" id="E1U-qT-xoe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewTeamCell" id="E1U-qT-xoe">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E1U-qT-xoe" id="TtU-08-sTS">
@@ -38,17 +38,17 @@
                                     <outlet property="delegate" destination="qnZ-wi-8Jn" id="NPi-Ut-nDv"/>
                                 </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-M7-upt">
-                                <rect key="frame" x="0.0" y="521" width="414" height="215"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-M7-upt">
+                                <rect key="frame" x="0.0" y="486" width="414" height="250"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="cQl-nC-c4g"/>
+                                    <constraint firstAttribute="height" constant="250" id="cQl-nC-c4g"/>
                                 </constraints>
-                                <string key="text">Skippa papper och penna och förin resultat i en app istället. Först lägger man till dom lag man vill ska delta i spelet.                                                 Efter det så väljer du vilka grenar som ska spelas. 
+                                <string key="text">Skippa papper och penna och förin resultat i en app istället. Först lägger man till dom lag man vill ska delta i spelet. Efter det så väljer du vilka grenar som ska spelas. 
 Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan också lägga till valfria grenar som även sparas i appen. Efter att spelet är klart visas resultatet.                                          
                                                                                               LÅT BÄSTA SPELARE VINNA!!🏆</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEM⚽️🏋️‍♂️KAMP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIF-Is-BJH">
@@ -85,6 +85,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                         <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" backgroundImage="arrow.right.circle" catalog="system"/>
                                         <connections>
+                                            <action selector="moveToCompetitions:" destination="qnZ-wi-8Jn" eventType="touchUpInside" id="U9t-dk-b8I"/>
                                             <segue destination="REc-np-ILp" kind="presentation" identifier="TeamNamesSegue" modalPresentationStyle="fullScreen" id="ldd-v0-HKL"/>
                                         </connections>
                                     </button>
@@ -179,7 +180,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <color key="tintColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" id="61t-06-ths">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" id="61t-06-ths">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="61t-06-ths" id="hv9-Yr-ljC">
@@ -207,6 +208,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="CompetitionsSelected:" destination="REc-np-ILp" eventType="touchUpInside" id="Tgd-n0-9rX"/>
                                     <segue destination="H0a-mj-B9I" kind="presentation" identifier="confirmGameSegue" id="36g-O0-oC9"/>
                                 </connections>
                             </button>
@@ -217,6 +219,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                     <color key="titleColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="addCompButton:" destination="REc-np-ILp" eventType="touchUpInside" id="dD1-p2-WJE"/>
                                     <segue destination="7Kc-bM-ogr" kind="show" identifier="AddNewGame" id="pI7-fH-xct"/>
                                 </connections>
                             </button>
@@ -279,7 +282,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <color key="separatorColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCellId" rowHeight="70" id="MJk-ed-zB1" customClass="GameRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameCellId" rowHeight="70" id="MJk-ed-zB1" customClass="GameRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MJk-ed-zB1" id="PXQ-4H-cpi">
@@ -324,7 +327,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4um-2Y-x9m">
-                                <rect key="frame" x="321" y="632.66666666666663" width="73" height="73.333333333333371"/>
+                                <rect key="frame" x="321" y="632.66666666666663" width="73" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74.329999999999998" id="lar-tF-Zb9"/>
                                     <constraint firstAttribute="width" constant="73" id="xvK-9O-5Bs"/>
@@ -338,7 +341,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                     <action selector="newCompetition:" destination="7Vx-3K-vkJ" eventType="touchUpInside" id="CSd-V5-7AH"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2md-aH-JH8">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" restorationIdentifier="previewButtonId" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2md-aH-JH8">
                                 <rect key="frame" x="20" y="632.66666666666663" width="73" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="ZcM-UG-tdA"/>
@@ -370,7 +373,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lsx-4C-42A">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lsx-4C-42A">
                                 <rect key="frame" x="13" y="56" width="388" height="139"/>
                                 <color key="backgroundColor" white="1" alpha="0.14060103527607362" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -399,7 +402,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                             <constraint firstItem="Zbx-Jn-X5x" firstAttribute="leading" secondItem="2md-aH-JH8" secondAttribute="trailing" constant="8" id="fRV-mJ-8t9"/>
                             <constraint firstItem="2md-aH-JH8" firstAttribute="top" secondItem="GzN-pS-wYT" secondAttribute="bottom" constant="60" id="gdh-3h-IT0"/>
                             <constraint firstItem="lsx-4C-42A" firstAttribute="top" secondItem="TKL-v1-O63" secondAttribute="bottom" constant="8" id="i8z-8Y-9m3"/>
-                            <constraint firstItem="F1U-lB-xKU" firstAttribute="bottom" secondItem="4um-2Y-x9m" secondAttribute="bottom" constant="29.670000000000002" id="m55-wL-ycU"/>
+                            <constraint firstItem="F1U-lB-xKU" firstAttribute="bottom" secondItem="4um-2Y-x9m" secondAttribute="bottom" constant="29" id="m55-wL-ycU"/>
                             <constraint firstItem="lsx-4C-42A" firstAttribute="centerX" secondItem="TKL-v1-O63" secondAttribute="centerX" id="w3u-Ff-Dfd"/>
                             <constraint firstItem="lsx-4C-42A" firstAttribute="leading" secondItem="F1U-lB-xKU" secondAttribute="leading" constant="13" id="ze6-sV-OnU"/>
                         </constraints>
@@ -433,7 +436,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="finalScoreCell" rowHeight="70" id="DFr-Eb-UVR" customClass="ResultTableViewCell" customModule="Femkamp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="finalScoreCell" rowHeight="70" id="DFr-Eb-UVR" customClass="ResultTableViewCell" customModule="Femkamp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DFr-Eb-UVR" id="qPH-Xq-uf5">
@@ -478,7 +481,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 </connections>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Slutresultat 🏆" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QZ0-Uv-1EB">
-                                <rect key="frame" x="47" y="30.000000000000004" width="320" height="50.333333333333343"/>
+                                <rect key="frame" x="47" y="25" width="320" height="65.333333333333329"/>
                                 <color key="backgroundColor" red="0.44467037669999998" green="0.71564097120000003" blue="0.69204569599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
@@ -506,13 +509,13 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                             <constraint firstItem="Xxq-AT-Dvu" firstAttribute="leading" secondItem="0HD-nJ-QCu" secondAttribute="leading" id="441-3w-LLk"/>
                             <constraint firstItem="Xxq-AT-Dvu" firstAttribute="centerX" secondItem="XKG-j0-rSe" secondAttribute="centerX" id="CNa-01-uuV"/>
                             <constraint firstItem="Xxq-AT-Dvu" firstAttribute="trailing" secondItem="0HD-nJ-QCu" secondAttribute="trailing" id="UPT-VS-Wr8"/>
-                            <constraint firstItem="QZ0-Uv-1EB" firstAttribute="top" secondItem="0HD-nJ-QCu" secondAttribute="top" constant="30" id="V5f-E0-2M3"/>
+                            <constraint firstItem="QZ0-Uv-1EB" firstAttribute="top" secondItem="0HD-nJ-QCu" secondAttribute="top" constant="25" id="V5f-E0-2M3"/>
                             <constraint firstItem="QZ0-Uv-1EB" firstAttribute="leading" secondItem="0HD-nJ-QCu" secondAttribute="leading" constant="47" id="Vj2-uB-xxa"/>
                             <constraint firstItem="0HD-nJ-QCu" firstAttribute="trailing" secondItem="QZ0-Uv-1EB" secondAttribute="trailing" constant="47" id="Yv8-7o-9pw"/>
                             <constraint firstItem="9cw-wj-amL" firstAttribute="top" secondItem="Xxq-AT-Dvu" secondAttribute="bottom" constant="10.333333333333258" id="doh-9M-5n2"/>
                             <constraint firstItem="Xxq-AT-Dvu" firstAttribute="centerY" secondItem="XKG-j0-rSe" secondAttribute="centerY" id="fij-sa-DHT"/>
                             <constraint firstItem="0HD-nJ-QCu" firstAttribute="bottom" secondItem="9cw-wj-amL" secondAttribute="bottom" constant="20.666666666666629" id="jLA-Rq-KWg"/>
-                            <constraint firstItem="Xxq-AT-Dvu" firstAttribute="top" secondItem="QZ0-Uv-1EB" secondAttribute="bottom" constant="25" id="q1W-4U-k4i"/>
+                            <constraint firstItem="Xxq-AT-Dvu" firstAttribute="top" secondItem="QZ0-Uv-1EB" secondAttribute="bottom" constant="15" id="q1W-4U-k4i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0HD-nJ-QCu"/>
                     </view>
@@ -565,7 +568,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                     <segue destination="REc-np-ILp" kind="presentation" identifier="saveSegue" modalPresentationStyle="fullScreen" id="bRh-8F-2qg"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lägg till en valfri gren som passar dina önksemål." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-YC-ahF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lägg till en valfri gren som passar dina önksemål." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-YC-ahF">
                                 <rect key="frame" x="37" y="70" width="340" height="77"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -666,38 +669,22 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
         <!--Confirm Game Pop Up View Controller-->
         <scene sceneID="5Pf-jb-0Kq">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="H0a-mj-B9I" customClass="ConfirmGamePopUpViewController" customModule="Femkamp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="H0a-mj-B9I" customClass="ConfirmGamePopUpViewController" customModule="Femkamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a8M-le-qEL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmX-Go-xhZ">
-                                <rect key="frame" x="20" y="20" width="374" height="696"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmX-Go-xhZ">
+                                <rect key="frame" x="20" y="30" width="374" height="676"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qra-9j-d4N">
-                                        <rect key="frame" x="8" y="606" width="73" height="73"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TFq-m3-J8t">
+                                        <rect key="frame" x="0.0" y="63" width="374" height="550"/>
+                                        <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" backgroundImage="xmark.circle" catalog="system">
-                                            <color key="titleColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMJ-ja-fEj">
-                                        <rect key="frame" x="293" y="606" width="73" height="73"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" backgroundImage="checkmark.circle" catalog="system"/>
-                                        <connections>
-                                            <segue destination="7Vx-3K-vkJ" kind="presentation" identifier="startNewGameSegue" modalPresentationStyle="fullScreen" id="gNo-FV-0HG"/>
-                                        </connections>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TFq-m3-J8t">
-                                        <rect key="frame" x="0.0" y="105" width="374" height="486"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConconfirmCell" id="Kqo-m5-CbW">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConconfirmCell" id="Kqo-m5-CbW">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kqo-m5-CbW" id="aaL-zU-TwO">
@@ -712,20 +699,72 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                             <outlet property="delegate" destination="H0a-mj-B9I" id="WNb-Ih-MYk"/>
                                         </connections>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Översikt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-nC-rRI">
-                                        <rect key="frame" x="115" y="38" width="145" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qra-9j-d4N">
+                                        <rect key="frame" x="24" y="620" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51.329999999999998" id="4CT-6L-62c"/>
+                                            <constraint firstAttribute="width" constant="50" id="qiv-9v-dhS"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="xmark.circle" catalog="system">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoConfirmButton:" destination="H0a-mj-B9I" eventType="touchUpInside" id="xnv-9T-hyp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMJ-ja-fEj">
+                                        <rect key="frame" x="299" y="620" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51.329999999999998" id="pOM-0j-gz1"/>
+                                            <constraint firstAttribute="width" constant="50" id="yFA-Fe-rPI"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="checkmark.circle" catalog="system"/>
+                                        <connections>
+                                            <segue destination="7Vx-3K-vkJ" kind="presentation" identifier="startNewGameSegue" modalPresentationStyle="fullScreen" id="gNo-FV-0HG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Översikt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-nC-rRI">
+                                        <rect key="frame" x="120" y="17" width="134" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="U0o-C0-6Ec"/>
+                                            <constraint firstAttribute="width" constant="134" id="hyt-ad-NOq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="tbv-nC-rRI" firstAttribute="top" secondItem="tmX-Go-xhZ" secondAttribute="top" constant="17" id="5Qp-Gl-0lC"/>
+                                    <constraint firstAttribute="bottom" secondItem="qra-9j-d4N" secondAttribute="bottom" constant="5.6699999999999999" id="AHR-7z-dHG"/>
+                                    <constraint firstAttribute="bottom" secondItem="YMJ-ja-fEj" secondAttribute="bottom" constant="5.6699999999999999" id="D6E-fV-BSY"/>
+                                    <constraint firstAttribute="trailing" secondItem="TFq-m3-J8t" secondAttribute="trailing" id="Urv-86-OaF"/>
+                                    <constraint firstItem="TFq-m3-J8t" firstAttribute="leading" secondItem="tmX-Go-xhZ" secondAttribute="leading" id="VJo-s8-v8n"/>
+                                    <constraint firstItem="qra-9j-d4N" firstAttribute="top" secondItem="TFq-m3-J8t" secondAttribute="bottom" constant="6" id="eqd-x4-NBD"/>
+                                    <constraint firstItem="tbv-nC-rRI" firstAttribute="leading" secondItem="tmX-Go-xhZ" secondAttribute="leading" constant="120" id="l3h-3J-ztV"/>
+                                    <constraint firstItem="TFq-m3-J8t" firstAttribute="centerY" secondItem="tmX-Go-xhZ" secondAttribute="centerY" id="lt2-bk-Gy3"/>
+                                    <constraint firstItem="TFq-m3-J8t" firstAttribute="top" secondItem="tbv-nC-rRI" secondAttribute="bottom" constant="16" id="n1s-WP-pEX"/>
+                                    <constraint firstItem="qra-9j-d4N" firstAttribute="leading" secondItem="tmX-Go-xhZ" secondAttribute="leading" constant="24" id="ndQ-Kz-IHH"/>
+                                    <constraint firstItem="TFq-m3-J8t" firstAttribute="centerX" secondItem="tbv-nC-rRI" secondAttribute="centerX" id="oyZ-dD-6dm"/>
+                                    <constraint firstAttribute="trailing" secondItem="YMJ-ja-fEj" secondAttribute="trailing" constant="25" id="rs3-3q-Lgj"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.24813075153374234" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nQe-Ox-a6V" firstAttribute="bottom" secondItem="tmX-Go-xhZ" secondAttribute="bottom" constant="30" id="FtE-Qd-Rga"/>
+                            <constraint firstItem="tmX-Go-xhZ" firstAttribute="leading" secondItem="a8M-le-qEL" secondAttribute="leadingMargin" id="MGF-LI-HvD"/>
+                            <constraint firstItem="tmX-Go-xhZ" firstAttribute="top" secondItem="nQe-Ox-a6V" secondAttribute="top" constant="30" id="OgQ-pH-Eff"/>
+                            <constraint firstItem="tmX-Go-xhZ" firstAttribute="trailing" secondItem="a8M-le-qEL" secondAttribute="trailingMargin" id="cGE-0Y-6ZG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nQe-Ox-a6V"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmView" destination="tmX-Go-xhZ" id="n9M-JA-cWL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4y-Bo-ZJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -747,7 +786,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="highScorecell" id="20R-f7-Nj5" customClass="HighScoreTableViewCell" customModule="Femkamp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="highScorecell" id="20R-f7-Nj5" customClass="HighScoreTableViewCell" customModule="Femkamp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="20R-f7-Nj5" id="CYw-6A-Dh7">
@@ -813,7 +852,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.24762749233128833" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kHL-1x-zZN" firstAttribute="bottom" secondItem="8xa-pr-9pe" secondAttribute="bottom" constant="105" id="NzQ-Wm-9pZ"/>
                             <constraint firstItem="8xa-pr-9pe" firstAttribute="leading" secondItem="JDH-7v-zIU" secondAttribute="leadingMargin" id="Xf2-by-yDB"/>
@@ -860,7 +899,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreForEachRoundCell" id="Dun-6i-Jtx" customClass="ScoreForEachRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreForEachRoundCell" id="Dun-6i-Jtx" customClass="ScoreForEachRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dun-6i-Jtx" id="BdR-Tg-XHq">
@@ -1160,7 +1199,7 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="384-9a-IxC"/>
-        <segue reference="bRh-8F-2qg"/>
-        <segue reference="uak-O9-tAW"/>
+        <segue reference="ldd-v0-HKL"/>
+        <segue reference="cI7-pR-dfy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -59,14 +59,18 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
            //  saveArray ()
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+
             if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none {
-            selectedGames.remove(at: 0)
+                selectedGames.remove(at: 0)
             }
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             selectedGames.append(comepetition[indexPath.row])
         }
     }
+    
+    
+    
     //refresh tableView
     func refresh(){
         tableView.reloadData()
@@ -78,7 +82,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     //if Row is
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            comepetition.remove(at: indexPath.row)
+            selectedGames.remove(at: indexPath.row)
             tableView.reloadData()
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -86,9 +90,21 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
  
+    @IBAction func CompetitionsSelected(_ sender: UIButton) {
+        if selectedGames.isEmpty {
+            sender.shake()
+        }else{
+            sender.pulsate()
+        }
+    }
+    
+    @IBAction func addCompButton(_ sender: UIButton) {
+        sender.pulsate()
+    }
     //Button to go back to "TeamNamesViewController"
     @IBAction func goBackToTeams(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        sender.pulsate()
     }
     //All Information how wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
