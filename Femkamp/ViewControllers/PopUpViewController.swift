@@ -47,6 +47,7 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
     //Sort highscore array
     func sortHighScoreArray(){
       
+        
         highScore?.sort()
    
         self.popUpTableView.reloadData()

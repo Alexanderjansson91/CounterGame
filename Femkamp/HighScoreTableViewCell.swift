@@ -17,7 +17,7 @@ class HighScoreTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         /*
-         This my Tableviewcell for my  Higshcore
+         This my Tableviewcell for my Higshcore
          */
     }
 

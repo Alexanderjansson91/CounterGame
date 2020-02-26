@@ -109,6 +109,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     //If no Teams are add, one alert window will show
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool{
         
+        
         if newPlayer.isEmpty == true {
             let alert = UIAlertController(title: "‼️", message: "Var vänlig och lägg till lag", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in

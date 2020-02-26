@@ -15,8 +15,7 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
     let finalScoreCell = "finalScoreCell"
     var comepetition = [Comepetitions]()
     var finalResualt : [Player]?
-    var emoji = ["🥇","🥈","🥉",]
-    
+    var selectedPlayer: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +54,17 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
         return cell
     }
+    
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        selectedPlayer = finalResualt?[indexPath.row]
+    
+        
+        
+      //  performSegue(withIdentifier: "finalScoreEachRoundSegue", sender: self)
+
+    }
+    
     // Sort array by highest result
     func sortArray(){
         finalResualt?.sort()
@@ -64,8 +74,11 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
 
         if segue.identifier == "finalScoreEachRoundSegue"{
             let vc2 = segue.destination as! FinalResultPopUpViewController
-            vc2.finalScoreEachRound = self.finalResualt
+          //  vc2.finalScoreEachRound = self.finalResualt
             vc2.competitions = self.comepetition
+            vc2.player = selectedPlayer
+            
+            
         }
     }
     

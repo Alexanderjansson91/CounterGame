@@ -878,13 +878,15 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Vw-za-Tzx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vw-za-Tzx">
                                 <rect key="frame" x="20" y="92" width="374" height="520"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgF-oZ-4nC">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgF-oZ-4nC">
                                         <rect key="frame" x="169" y="470" width="36" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37.329999999999998" id="0Bv-tV-mIg"/>
+                                            <constraint firstAttribute="width" constant="36" id="83a-x2-HtT"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" backgroundImage="xmark.circle" catalog="system">
                                             <color key="titleColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -894,16 +896,28 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                             <segue destination="c4b-3B-5xU" kind="presentation" id="384-9a-IxC"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aPu-K3-ugk">
-                                        <rect key="frame" x="0.0" y="66" width="374" height="395"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Rf-fjL">
+                                        <rect key="frame" x="155" y="17" width="64" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="QOe-aQ-gbB"/>
+                                            <constraint firstAttribute="width" constant="64" id="r73-F8-cX3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aPu-K3-ugk">
+                                        <rect key="frame" x="0.0" y="66" width="374" height="390"/>
                                         <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="390" id="v0v-xN-0Ah"/>
+                                        </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreForEachRoundCell" id="Dun-6i-Jtx" customClass="ScoreForEachRoundTableViewCell" customModule="Femkamp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="374" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dun-6i-Jtx" id="BdR-Tg-XHq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCK-sb-Jkw">
@@ -927,18 +941,28 @@ Tävlingskommittén har valt ut ett antal grenar som man kan välja. Man kan ock
                                             <outlet property="delegate" destination="ZVe-4h-G2W" id="7dR-cJ-UEA"/>
                                         </connections>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Rf-fjL">
-                                        <rect key="frame" x="155" y="17" width="64" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" red="0.92156862750000001" green="0.87450980389999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.71372549019999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Pgq-Rf-fjL" firstAttribute="leading" secondItem="0Vw-za-Tzx" secondAttribute="leading" constant="155" id="2A2-xU-gXa"/>
+                                    <constraint firstItem="aPu-K3-ugk" firstAttribute="top" secondItem="Pgq-Rf-fjL" secondAttribute="bottom" constant="19" id="8zs-Ie-WDr"/>
+                                    <constraint firstItem="jgF-oZ-4nC" firstAttribute="top" secondItem="aPu-K3-ugk" secondAttribute="bottom" constant="13" id="UW0-AX-chh"/>
+                                    <constraint firstAttribute="bottom" secondItem="jgF-oZ-4nC" secondAttribute="bottom" constant="13.67" id="Uok-fI-3AG"/>
+                                    <constraint firstItem="aPu-K3-ugk" firstAttribute="centerX" secondItem="Pgq-Rf-fjL" secondAttribute="centerX" id="ZWi-NZ-hBr"/>
+                                    <constraint firstItem="aPu-K3-ugk" firstAttribute="leading" secondItem="0Vw-za-Tzx" secondAttribute="leading" id="rPe-he-o3p"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgF-oZ-4nC" secondAttribute="trailing" constant="169" id="vlO-Ra-8SA"/>
+                                    <constraint firstItem="Pgq-Rf-fjL" firstAttribute="top" secondItem="0Vw-za-Tzx" secondAttribute="top" constant="17" id="zJp-fc-B7u"/>
+                                    <constraint firstItem="aPu-K3-ugk" firstAttribute="centerX" secondItem="jgF-oZ-4nC" secondAttribute="centerX" id="zxf-xu-1ez"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Vw-za-Tzx" firstAttribute="leading" secondItem="6vx-Bh-6u5" secondAttribute="leadingMargin" id="FfD-Iw-KUV"/>
+                            <constraint firstItem="0Vw-za-Tzx" firstAttribute="trailing" secondItem="6vx-Bh-6u5" secondAttribute="trailingMargin" id="LaL-7l-BaT"/>
+                            <constraint firstItem="0Vw-za-Tzx" firstAttribute="top" secondItem="OzS-J7-rXP" secondAttribute="top" constant="92" id="NYp-aN-a3z"/>
+                            <constraint firstItem="OzS-J7-rXP" firstAttribute="bottom" secondItem="0Vw-za-Tzx" secondAttribute="bottom" constant="104" id="iiz-Ky-bDQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OzS-J7-rXP"/>
                     </view>
                     <connections>

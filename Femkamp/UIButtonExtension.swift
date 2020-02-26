@@ -11,6 +11,7 @@ import UIKit
 
 extension UIButton {
     
+    //puls animation for my button
     func pulsate() {
         
         let pulse = CASpringAnimation(keyPath: "transform.scale")
@@ -25,6 +26,7 @@ extension UIButton {
         layer.add(pulse, forKey: "pulse")
     }
     
+    //Shake animation for my button
     func shake() {
         
         let shake = CABasicAnimation(keyPath: "position")

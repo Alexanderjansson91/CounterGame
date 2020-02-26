@@ -10,25 +10,21 @@ import UIKit
 
 class FinalResultPopUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var finalScoreEachRound : [Player]?
+ //   var finalScoreEachRound : [Player]?
     @IBOutlet weak var scoreForEachRoundTeams: UILabel!
      var competitions : [Comepetitions]?
     let scoreForEachRoundCell = "scoreForEachRoundCell"
-   
+    var player : Player?
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Player.self)
-        
-       
-//        if let playerName = finalScoreEachRound{
-//            scoreForEachRoundTeams.text = "\(String(describing: playerName))"
-//               }
-        //scoreForEachRoundTeams.text = finalScoreEachRound?.name
-        
     
+       
+        scoreForEachRoundTeams.text = player?.name
+        //self.scoreForEachRoundTeams.text = "\(String(describing: finalScoreEachRound?.first?.name))"
 
-       scoreForEachRoundTeams.text =  "\(String(describing: finalScoreEachRound))"
-        //scoreForEachRoundTeams = [Player.init(name: nil, score: 0)]?
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,12 +38,16 @@ class FinalResultPopUpViewController: UIViewController,UITableViewDataSource,UIT
         //  Player.player.name? = highScore?[indexPath.row].score
        
         cell.textLabel?.text = competitions?[indexPath.row].comepetitionsOption
-    
-     
-        if let score = finalScoreEachRound?[indexPath.row].scoreForEachRound {
-                   cell.scoreforEachRoundLabel.text = String("\(score)")
-               }
-     
+        //cell.scoreforEachRoundLabel.text = String(player![indexPath.row].score)
+        //cell.scoreforEachRoundLabel.text = ("\(String(describing: player?.scoreForEachRound))")
+        cell.scoreforEachRoundLabel.text = ("\(String(describing: player?.scoreForEachRound))")
+        //cell.scoreforEachRoundLabel.text = String(player![indexPath.row].scoreForEachRound)
+//        if let score = player?[indexPath.row] {
+//                   cell.scoreforEachRoundLabel.text = String("\(score)")
+//              }
+//
+
+        
         return cell
     }
 

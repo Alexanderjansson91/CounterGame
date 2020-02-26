@@ -74,7 +74,6 @@ class ConfirmGamePopUpViewController: UIViewController,UITableViewDataSource,UIT
         if segue.identifier == "startNewGameSegue" {
             let destVC=segue.destination as! GameViewController
             destVC.competitions = comepetition as [Comepetitions]
-            
             destVC.players = players
             
         }

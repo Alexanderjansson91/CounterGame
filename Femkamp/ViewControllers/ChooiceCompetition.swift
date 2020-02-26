@@ -51,25 +51,31 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.textLabel?.text = comepetition[indexPath.row].comepetitionsOption
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+        
         return cell
     }
+    
     //select and unselect, if row is unselected remove from selectedGames else append to selectedGames
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
-           //  saveArray ()
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
 
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+            
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            
             if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none {
-                selectedGames.remove(at: 0)
+             
+                for index in  (0..<selectedGames.count).reversed() {
+                    if selectedGames[index].comepetitionsOption == comepetition[indexPath.row].comepetitionsOption {
+                        selectedGames.remove(at: index)
+                    }
+                }
             }
-        }else{
+        }
+        else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             selectedGames.append(comepetition[indexPath.row])
         }
     }
-    
-    
     
     //refresh tableView
     func refresh(){
@@ -89,7 +95,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             tableView.endUpdates()
         }
     }
- 
+    
     @IBAction func CompetitionsSelected(_ sender: UIButton) {
         if selectedGames.isEmpty {
             sender.shake()
@@ -108,7 +114,7 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     //All Information how wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         //Segue for start a new game
         if segue.identifier == "confirmGameSegue" {
             let destVC=segue.destination as! ConfirmGamePopUpViewController
@@ -126,19 +132,19 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     //If no competitions are add when segue "StartGameSegue" run, one alert window will show
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool{
-    if identifier == "confirmGameSegue" {
-        if selectedGames.isEmpty == true {
-            let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
-                alert.dismiss(animated: true, completion: nil)}))
-            present(alert, animated: true,completion: nil)
-            return false
+        if identifier == "confirmGameSegue" {
+            if selectedGames.isEmpty == true {
+                let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+                    alert.dismiss(animated: true, completion: nil)}))
+                present(alert, animated: true,completion: nil)
+                return false
+            }
+            else {
+                return true
+            }
         }
-        else {
-            return true
-        }
-    }
         return true
-  }
+    }
 }
 
