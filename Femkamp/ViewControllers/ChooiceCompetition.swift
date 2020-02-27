@@ -29,16 +29,15 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         //Object for my comepetition array
         if  comepetition.count == 0 {
             comepetition.append(Comepetitions(ComepetitionsOption: "Boll i hink ⚾️",ComepetitionsInfo: "Använd en valfri hink och boll. välj ett avstånd från hinken som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "Kasta bollen i en korg"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Kasta pilen på siffran 20"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Skjut mot ett mål"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Kasta ring 🧿", ComepetitionsInfo: "kasta ring på en stång"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Kubb 🥢", ComepetitionsInfo: "Kasta ner kubb"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Äggkastarn 🥚", ComepetitionsInfo: "Kasta ägg mot varandra"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee 🥏", ComepetitionsInfo: "kasta mot en mål"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Boul 🎱", ComepetitionsInfo:  "kasta kulan mot ett mål"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Golf 🎹",ComepetitionsInfo: "sätt bollen nära ett hål"))
-            comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "kasta freesbee i en basket korg"))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Basket 🏀", ComepetitionsInfo: "använd en basketkorg(eller fantasin). Välj ett avstånd från korgem som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Dart 🎯", ComepetitionsInfo: "Använd en darttavla som träffbild. Välj ett avstånd som passar alla spelare. Alla spelare kastar tre pilar i var och siffran som ska träffas är nummer 20. Registera sedan totalt antal träffar per lag."))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Luftgevär 🔫", ComepetitionsInfo: "Använd ett gevär och en valfri måltavla. Välj sedan ett avstånd som passar alla spelare. Alla spelare får två skott i var och registera sedan totalt antal träffar per lag. "))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Kasta ring 🧿", ComepetitionsInfo: "Använd klassiska plastringar och en måltavla. Välj sedan ett avstånd som passar alla spelare. Alla spelare får tre ringar i var och registera sedan totalt antal träffar per lag."))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Kubb 🥢", ComepetitionsInfo: "Avänd ett kubbspel. Ställ Upp alla 10 kubb på rad. Sedan kastar alla spelare i laget ttvå kast i var. registera sedan totalt antal träffar per lag."))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Äggkastarn 🥚", ComepetitionsInfo: "Använd ett vanligt ägg. Ställ samtliga spelare på rad med ett valfritt avstånd. Kasta sedan ägget mellan varandra, registera sedan totalt antal kast per lag. "))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee 🥏", ComepetitionsInfo: "Använd en freesbee och en måltavla. välj ett avstånd från måltavlan som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Boul 🎱", ComepetitionsInfo:  "Använd boul kulor och en måltavla. välj ett avstånd från måltavlan som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
+            comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "Använd ett fressbee och en basketkorg. välj ett avstånd från korgen som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
         }
     }
     //counts number of rows in array

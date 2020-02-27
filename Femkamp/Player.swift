@@ -36,7 +36,9 @@ class Player : CustomStringConvertible, Comparable{
         var totalScore = 0
         for score in scoreForEachRound{
             totalScore += score
+         
         }
+        
         return totalScore
     }
 }

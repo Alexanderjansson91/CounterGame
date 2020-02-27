@@ -17,7 +17,8 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Player.totalScore()
+        
         sortHighScoreArray()
         popUpView.layer.cornerRadius = 26
         popUpView.clipsToBounds = true
@@ -46,13 +47,12 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     //Sort highscore array
     func sortHighScoreArray(){
-      
         
-        highScore?.sort()
-   
+        _ = highScore?.sort(by: { $0.totalScore() > $1.totalScore()})
+        for player in (highScore)!{
+            print(player.scoreForEachRound)
+        }
         self.popUpTableView.reloadData()
-        
+
     }
-    
-    
 }

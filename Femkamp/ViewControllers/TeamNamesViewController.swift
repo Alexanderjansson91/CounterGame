@@ -134,11 +134,12 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            //self.keyboardConstrains.constant = keyboardFrame.size.height
             
-            if self.view.frame.size.height >= 800{ //For bigger screens (X ,11)
+            
+            if self.view.frame.size.height >= 800{
                 self.keyboardConstrains.constant = keyboardFrame.size.height - 34
             }
+
             else {
                 self.keyboardConstrains.constant = keyboardFrame.size.height
             }

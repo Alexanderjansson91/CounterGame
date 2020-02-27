@@ -52,6 +52,7 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.finalScoreLabel.text = String(finalResualt![indexPath.row].score)
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+        
         return cell
     }
     
@@ -59,7 +60,7 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         selectedPlayer = finalResualt?[indexPath.row]
-        
+        performSegue(withIdentifier: "finalScoreEachRoundSegue", sender: Any?.self)
     }
     
     // Sort array by highest result
@@ -67,6 +68,10 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         finalResualt?.sort()
         self.finalScoreTableView.reloadData()
     }
+    
+    @IBAction func infoScoreButton(_ sender: UIButton) {
+    }
+    
     
     //Sending all Information how you wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)   {

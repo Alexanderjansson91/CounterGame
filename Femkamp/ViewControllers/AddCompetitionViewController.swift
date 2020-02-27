@@ -55,6 +55,9 @@ class AddCompetitionViewController: UIViewController {
             if self.view.frame.size.height >= 800{ //For bigger screens (X ,11)
                 self.addCompetitionConstrain.constant = keyboardFrame.size.height - 24
             }
+            if self.view.frame.size.height <= 600{
+                self.addCompetitionConstrain.constant = keyboardFrame.size.height - 30
+            }
             else {
                 self.addCompetitionConstrain.constant = keyboardFrame.size.height + 10
             }

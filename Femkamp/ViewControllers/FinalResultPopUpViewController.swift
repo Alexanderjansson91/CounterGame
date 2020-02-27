@@ -10,7 +10,8 @@ import UIKit
 
 class FinalResultPopUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    //var playerScore : [Player]?
+    @IBOutlet weak var viewScoreForEachRound: UIView!
+    
     @IBOutlet weak var scoreForEachRoundTeams: UILabel!
     var competitions : [Comepetitions]?
     let scoreForEachRoundCell = "scoreForEachRoundCell"
@@ -18,7 +19,10 @@ class FinalResultPopUpViewController: UIViewController,UITableViewDataSource,UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        viewScoreForEachRound.layer.cornerRadius = 26
+        viewScoreForEachRound.clipsToBounds = true
+
         scoreForEachRoundTeams.text = player?.name
     }
     
