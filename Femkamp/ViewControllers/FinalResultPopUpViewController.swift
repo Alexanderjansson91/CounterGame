@@ -10,47 +10,37 @@ import UIKit
 
 class FinalResultPopUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
- //   var finalScoreEachRound : [Player]?
+    //var playerScore : [Player]?
     @IBOutlet weak var scoreForEachRoundTeams: UILabel!
-     var competitions : [Comepetitions]?
+    var competitions : [Comepetitions]?
     let scoreForEachRoundCell = "scoreForEachRoundCell"
     var player : Player?
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Player.self)
     
-       
         scoreForEachRoundTeams.text = player?.name
-        //self.scoreForEachRoundTeams.text = "\(String(describing: finalScoreEachRound?.first?.name))"
-
-        
     }
     
+    //Counts number of array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return competitions!.count
         
     }
     
+    // Design and structure for tableviewcell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreForEachRoundCell" , for: indexPath) as! ScoreForEachRoundTableViewCell
-        //  Player.player.name? = highScore?[indexPath.row].score
-       
-        cell.textLabel?.text = competitions?[indexPath.row].comepetitionsOption
-        //cell.scoreforEachRoundLabel.text = String(player![indexPath.row].score)
-        //cell.scoreforEachRoundLabel.text = ("\(String(describing: player?.scoreForEachRound))")
-        cell.scoreforEachRoundLabel.text = ("\(String(describing: player?.scoreForEachRound))")
-        //cell.scoreforEachRoundLabel.text = String(player![indexPath.row].scoreForEachRound)
-//        if let score = player?[indexPath.row] {
-//                   cell.scoreforEachRoundLabel.text = String("\(score)")
-//              }
-//
 
-        
+        cell.textLabel?.text = competitions?[indexPath.row].comepetitionsOption
+        if let score = player?.scoreForEachRound[indexPath.row] {
+            cell.scoreforEachRoundLabel.text = String(score)
+        }
         return cell
     }
 
+    //Close button for this page
     @IBAction func closeScoreForEachRound(_ sender: UIButton) {
         
               dismiss(animated: true, completion: nil)

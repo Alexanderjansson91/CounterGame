@@ -55,14 +55,11 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         return cell
     }
     
+    //If you select a row "FinalResultPopUpViewController" opens
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         selectedPlayer = finalResualt?[indexPath.row]
-    
         
-        
-      //  performSegue(withIdentifier: "finalScoreEachRoundSegue", sender: self)
-
     }
     
     // Sort array by highest result
@@ -70,11 +67,13 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         finalResualt?.sort()
         self.finalScoreTableView.reloadData()
     }
+    
+    //Sending all Information how you wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)   {
 
         if segue.identifier == "finalScoreEachRoundSegue"{
             let vc2 = segue.destination as! FinalResultPopUpViewController
-          //  vc2.finalScoreEachRound = self.finalResualt
+        
             vc2.competitions = self.comepetition
             vc2.player = selectedPlayer
             
