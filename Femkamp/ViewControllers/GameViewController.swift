@@ -18,11 +18,7 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var gameRoundTableViewcell = "GameRoundTableViewcell"
     @IBOutlet weak var tabelViewGameRound: UITableView!
     let gameCellId = "GameCellId"
-    let previewButtonId = "previewButtonId"
     var players : [Player]? = []
-    var scoreLabel2 = GameRoundTableViewCell()
-    var stepper2 = GameRoundTableViewCell()
-    
     var competitions : [Comepetitions]?
     @IBOutlet weak var textFieldCompInfo: UITextView!
     @IBOutlet weak var headingLabel: UILabel!
@@ -41,10 +37,12 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             headingLabel.text = competition.comepetitionsOption
         }
     }
+    
     //counts number of rows in array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players!.count
     }
+    
     // Design and structure for tableviewcell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         let cell = tableView.dequeueReusableCell(withIdentifier: gameCellId, for: indexPath as IndexPath) as! GameRoundTableViewCell
@@ -55,43 +53,44 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.scoreLabel?.text = String(score)
         }
         cell.player = players?[indexPath.row]
-    //Clear Stepper
+        //Clear Stepper
         if let score = players?[indexPath.row].score {
             cell.scoreLabel.text = String(score)
             cell.stepper?.value = Double(score)
         }
         return cell
     }
+    
     //Height of tableview
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
+    
     //refresh tableview
     func refresh(){
         tabelViewGameRound.reloadData()
     }
+    
     //Preview competition button, if you press this button you will also remove score from "scoreForEachRound"
     @IBAction func previewCompeition(_ sender: UIButton)  {
         
         guard let removeScore = players else {return}
-           for player in removeScore {
+        for player in removeScore {
             player.scoreForEachRound.removeLast()
+            player.score = 0
         }
         guard let quest = competitions else {return}
-        
         
         if currentCompetitionsIndex - 1 < quest.count  {
             currentCompetitionsIndex -= 1
             textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
             headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
-
-
-         
+            
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
-        //Hide button if you are the first competition
+        //Hide button if you are on the first competition
         if currentCompetitionsIndex == 0{
             previewButton.isHidden = true
         }
@@ -99,18 +98,19 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         sender.pulsate()
     }
     
+    //Alert window if press "previewCompeition"
     func alertPreviewButton() {
         let alert = UIAlertController(title: "‼️", message: "Poängen på denna gren försvinner, så var vänlig och lägg poängen igen", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)}))
         present(alert, animated: true,completion: nil)
     }
-        
+    
     //button for New competition, if you press this button you will also add score to "scoreForEachRound"
     @IBAction func newCompetition(_ sender: UIButton)  {
-     
+        
         sender.pulsate()
-       
+        
         guard let players = players else {return}
         for player in players {
             player.scoreForEachRound.append(player.score)
@@ -123,33 +123,31 @@ class GameViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             currentCompetitionsIndex += 1
             textFieldCompInfo.text = quest[currentCompetitionsIndex].comepetitionsInfo
             headingLabel.text = quest[currentCompetitionsIndex].comepetitionsOption
-             
+            
         } else {
             currentCompetitionsIndex = 0
             performSegue(withIdentifier: "resultSegue", sender: nil)
         }
-        //show previewButton if you move on to the next competition
+        //show previewButton after you play one or more games
         if currentCompetitionsIndex > 0{
             previewButton.isHidden = false
         }
-        
     }
     
     //All Information how wants to follow the Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)   {
         
-        //Segue for finaslresult
+        //Segue for finalresult
         if segue.identifier == "resultSegue"{
             let vc = segue.destination as! FinalResultViewController
             vc.finalResualt = self.players
             vc.comepetition = self.competitions!
-        
         }
         //Segue for highscore
         if segue.identifier == "highScoreSegue"{
-            let vc2 = segue.destination as! PopUpViewController
+            let vc2 = segue.destination as! HighscorePopUpViewController
             vc2.highScore = self.players
-           
+            
         }
     }
 }

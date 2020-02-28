@@ -10,7 +10,6 @@ import UIKit
 
 class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonChoice: UIButton!
     let gameSegue = "StartGameSegue"
@@ -18,7 +17,6 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     let cellId =  "CellId"
     var selectedGames = [Comepetitions]()
     var players : [Player] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +38,12 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
             comepetition.append(Comepetitions(ComepetitionsOption: "Fressbee basket 🥏 + 🏀  ",ComepetitionsInfo: "Använd ett fressbee och en basketkorg. välj ett avstånd från korgen som passar alla spelare. Alla spelare kastar tre gånger i var och registera sedan totalt antal träffar per lag."))
         }
     }
+    
     //counts number of rows in array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comepetition.count
     }
+    
     // Design and structure for tableviewcell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
@@ -54,15 +54,15 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
-    //select and unselect, if row is unselected remove from selectedGames else append to selectedGames
+    //select and unselect, if row is unselected you will remove element from selectedGames else append to selectedGames
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
             
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             
             if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none {
-             
+                
                 for index in  (0..<selectedGames.count).reversed() {
                     if selectedGames[index].comepetitionsOption == comepetition[indexPath.row].comepetitionsOption {
                         selectedGames.remove(at: index)
@@ -84,17 +84,8 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    //if Row is
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete{
-            selectedGames.remove(at: indexPath.row)
-            tableView.reloadData()
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
-        }
-    }
     
+    //Set animation to button
     @IBAction func CompetitionsSelected(_ sender: UIButton) {
         if selectedGames.isEmpty {
             sender.shake()
@@ -103,14 +94,17 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
+    //button animation for add competition
     @IBAction func addCompButton(_ sender: UIButton) {
         sender.pulsate()
     }
+    
     //Button to go back to "TeamNamesViewController"
     @IBAction func goBackToTeams(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         sender.pulsate()
     }
+    
     //All Information how wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -128,12 +122,12 @@ class ChooiceCompetition: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-    //If no competitions are add when segue "StartGameSegue" run, one alert window will show
+    //If no competitions are add when segue "StartGameSegue" run, one alert window will appear
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool{
         if identifier == "confirmGameSegue" {
             if selectedGames.isEmpty == true {
-                let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj en gren", preferredStyle: .alert)
+                let alert = UIAlertController(title: "‼️", message: "Var vänlig och välj minst en gren", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
                     alert.dismiss(animated: true, completion: nil)}))
                 present(alert, animated: true,completion: nil)

@@ -30,7 +30,7 @@
 		5885BBB92405AAB900B444A4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885BBB82405AAB900B444A4 /* UIButtonExtension.swift */; };
 		58940E1823EAC784005E0940 /* FinalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58940E1723EAC784005E0940 /* FinalResultViewController.swift */; };
 		589D482A240020D500401ACF /* ScoreForEachRoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D4829240020D500401ACF /* ScoreForEachRoundTableViewCell.swift */; };
-		58B86B2223FAEFE600819FD7 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2123FAEFE600819FD7 /* PopUpViewController.swift */; };
+		58B86B2223FAEFE600819FD7 /* HighscorePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2123FAEFE600819FD7 /* HighscorePopUpViewController.swift */; };
 		58B86B2523FAF25600819FD7 /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2423FAF25600819FD7 /* HighScoreTableViewCell.swift */; };
 		58B86B2723FB0C4A00819FD7 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2623FB0C4A00819FD7 /* Shared.swift */; };
 /* End PBXBuildFile section */
@@ -82,7 +82,7 @@
 		5885BBB82405AAB900B444A4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		58940E1723EAC784005E0940 /* FinalResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultViewController.swift; sourceTree = "<group>"; };
 		589D4829240020D500401ACF /* ScoreForEachRoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreForEachRoundTableViewCell.swift; sourceTree = "<group>"; };
-		58B86B2123FAEFE600819FD7 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		58B86B2123FAEFE600819FD7 /* HighscorePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscorePopUpViewController.swift; sourceTree = "<group>"; };
 		58B86B2423FAF25600819FD7 /* HighScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewCell.swift; sourceTree = "<group>"; };
 		58B86B2623FB0C4A00819FD7 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 		58B86B2323FAEFF100819FD7 /* Pop Up */ = {
 			isa = PBXGroup;
 			children = (
-				58B86B2123FAEFE600819FD7 /* PopUpViewController.swift */,
+				58B86B2123FAEFE600819FD7 /* HighscorePopUpViewController.swift */,
 				58357B35240001A9002ABF32 /* FinalResultPopUpViewController.swift */,
 				584D0D3E240404A300150826 /* ConfirmGamePopUpViewController.swift */,
 			);
@@ -361,7 +361,7 @@
 				583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */,
 				5868887A23E313600039194D /* GameViewController.swift in Sources */,
 				583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */,
-				58B86B2223FAEFE600819FD7 /* PopUpViewController.swift in Sources */,
+				58B86B2223FAEFE600819FD7 /* HighscorePopUpViewController.swift in Sources */,
 				583EE48723D0F2B600E0F416 /* SceneDelegate.swift in Sources */,
 				581C3C9923D5A9260066AC18 /* Competitions.swift in Sources */,
 				582D3CDD23EB112600101820 /* ResultTableViewCell.swift in Sources */,

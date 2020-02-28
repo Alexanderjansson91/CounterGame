@@ -8,16 +8,15 @@
 
 import UIKit
 
-class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
+class HighscorePopUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
     @IBOutlet weak var popUpTableView: UITableView!
     var highScore : [Player]?
     let highScorecell = "highScorecell"
     @IBOutlet weak var popUpView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Player.totalScore()
         
         sortHighScoreArray()
         popUpView.layer.cornerRadius = 26
@@ -35,6 +34,8 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "highScorecell" , for: indexPath) as! HighScoreTableViewCell
         //  Player.player.name? = highScore?[indexPath.row].score
         cell.textLabel?.text = highScore?[indexPath.row].name
+        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
         cell.highScoreLabel.text = String(highScore![indexPath.row].totalScore())
         
         return cell
@@ -42,9 +43,9 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     //Close PopUp window
     @IBAction func closePopUp(_ sender: UIButton) {
-        
         dismiss(animated: true, completion: nil)
     }
+    
     //Sort highscore array
     func sortHighScoreArray(){
         
@@ -53,6 +54,5 @@ class PopUpViewController: UIViewController,UITableViewDataSource,UITableViewDel
             print(player.scoreForEachRound)
         }
         self.popUpTableView.reloadData()
-
     }
 }

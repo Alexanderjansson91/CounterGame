@@ -33,15 +33,15 @@ class AddCompetitionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver( self,name:  UIResponder.keyboardWillShowNotification, object: nil )
     }
-        
-    // Save new competition in "competitions"
+    
+    // Save/append new competition in "competitions"
     @IBAction func Save(_ sender: UIButton) {
         competitions.append( Comepetitions(ComepetitionsOption: addNewNameTextView.text!, ComepetitionsInfo: addNewCompetitionTextView.text))
     }
-    //Cancel if you wantt to Undo
+    //Cancel if you want to Undo
     @IBAction func cancel(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-
+        
     }
     
     //Set the Menu just Above keybaord whit an animation
@@ -50,9 +50,8 @@ class AddCompetitionViewController: UIViewController {
         let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            //self.keyboardConstrains.constant = keyboardFrame.size.height
             
-            if self.view.frame.size.height >= 800{ //For bigger screens (X ,11)
+            if self.view.frame.size.height >= 800{
                 self.addCompetitionConstrain.constant = keyboardFrame.size.height - 24
             }
             if self.view.frame.size.height <= 600{
@@ -65,13 +64,13 @@ class AddCompetitionViewController: UIViewController {
     }
     //All Information how wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-           if segue.identifier == "saveSegue" {
-               let destVC=segue.destination as! ChooiceCompetition
-               destVC.comepetition = competitions
-               destVC.players = players
+        
+        if segue.identifier == "saveSegue" {
+            let destVC=segue.destination as! ChooiceCompetition
+            destVC.comepetition = competitions
+            destVC.players = players
         }
     }
-
+    
 }
 

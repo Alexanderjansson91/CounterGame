@@ -23,10 +23,10 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    //Keybaord will automatic show when page opens
+        //Keybaord will automatic show when page opens
         inputNameTextField.becomeFirstResponder()
         inputNameTextField.delegate = self
-    
+        
     }
     //calling function keyboardWillShown
     override func viewWillAppear(_ animated: Bool) {
@@ -40,17 +40,18 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newPlayer.count
     }
-    // Design and structure for tableviewcell
+    // Design and structure for tableview/cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: NewTeamCell, for: indexPath)
         cell.textLabel?.text = newPlayer[indexPath.row].name
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
-      
+        
         return cell
     }
     
+    //Set animation to button
     @IBAction func moveToCompetitions(_ sender: UIButton) {
         
         if newPlayer.isEmpty {
@@ -84,12 +85,13 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         tableViewTeams.insertRows(at: [indexPath], with: .automatic)
         print(newPlayer)
     }
-        
+    
     //Making datasource editable in tableview
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    //delete Teams and remove name from array
+    
+    //delete names from array
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             newPlayer.remove(at: indexPath.row)
@@ -98,6 +100,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
             tableViewTeams.endUpdates()
         }
     }
+    
     //All Information how wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -106,6 +109,7 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
             destVC.players = newPlayer
         }
     }
+    
     //If no Teams are add, one alert window will show
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool{
         
@@ -120,32 +124,31 @@ class TeamNamesViewController: UIViewController,UITableViewDelegate,UITableViewD
         else {
             return true
         }
-        
     }
+    
     //Informtion button
     @IBAction func InfoButton(_ sender: UIButton) {
         inputNameTextField.resignFirstResponder()
         sender.pulsate()
     }
-        
-    //Set the Menu just Above keybaord whit an animation
+    
+    //Set the Menu just Above the keyboard whit an animation
     @objc func keyboardWillShown(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             
-            
             if self.view.frame.size.height >= 800{
                 self.keyboardConstrains.constant = keyboardFrame.size.height - 34
             }
-
+                
             else {
                 self.keyboardConstrains.constant = keyboardFrame.size.height
             }
         })
     }
 }
- 
+
 
 

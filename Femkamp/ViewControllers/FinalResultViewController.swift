@@ -26,7 +26,7 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         
         guard let players = finalResualt else {return}
         
-        // Counts array "scoreForEachRound"
+        // Counts total score
         for player in players {
             for score in player.scoreForEachRound{
                 player.score += score
@@ -35,17 +35,17 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         self.sortArray()
     }
     
-    //counts number of rows
+    //Counts number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalResualt!.count
     }
     
-    // Height of tableview
+    //Height of tableview
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 70
      }
     
-    // Design and structure for tableviewcell
+    //Design and structure for my tableview/cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: finalScoreCell, for: indexPath) as! ResultTableViewCell
         cell.textLabel?.text = finalResualt?[indexPath.row].name
@@ -63,27 +63,19 @@ class FinalResultViewController: UIViewController,UITableViewDelegate,UITableVie
         performSegue(withIdentifier: "finalScoreEachRoundSegue", sender: Any?.self)
     }
     
-    // Sort array by highest result
+    // Sort Player by highest result
     func sortArray(){
         finalResualt?.sort()
         self.finalScoreTableView.reloadData()
     }
-    
-    @IBAction func infoScoreButton(_ sender: UIButton) {
-    }
-    
-    
-    //Sending all Information how you wants to follow the Segue
+
+    //all Information how you wants to follow the Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)   {
 
         if segue.identifier == "finalScoreEachRoundSegue"{
             let vc2 = segue.destination as! FinalResultPopUpViewController
-        
             vc2.competitions = self.comepetition
             vc2.player = selectedPlayer
-            
-            
         }
     }
-    
 }

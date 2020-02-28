@@ -12,14 +12,12 @@ struct Comepetitions : Codable{
     
     var comepetitionsOption : String
     var comepetitionsInfo : String
-
+    
     //Constructur for "Comepetitions"
     init(ComepetitionsOption: String, ComepetitionsInfo : String) {
-            self.comepetitionsOption=ComepetitionsOption
-            self.comepetitionsInfo=ComepetitionsInfo
-    
-       }
-
+        self.comepetitionsOption=ComepetitionsOption
+        self.comepetitionsInfo=ComepetitionsInfo
+    }
 }
 
 

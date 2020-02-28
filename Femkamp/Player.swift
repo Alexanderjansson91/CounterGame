@@ -9,7 +9,7 @@
 import Foundation
 
 class Player : CustomStringConvertible, Comparable{
-   
+    
     var name : String?
     var score : Int
     var scoreForEachRound: [Int] = []
@@ -20,29 +20,27 @@ class Player : CustomStringConvertible, Comparable{
     init(name: String?, score: Int) {
         self.name=name
         self.score=score
-
+        
     }
     //makes Player class sortable
     static func < (lhs: Player, rhs: Player) -> Bool {
         return lhs.score > rhs.score
     }
-
+    
     static func == (lhs: Player, rhs: Player) -> Bool {
         return lhs.name == rhs.name && lhs.score == rhs.score
     }
     
-    //score array for game each round
+    //Counting score for each game round 
     func totalScore() -> Int {
         var totalScore = 0
         for score in scoreForEachRound{
             totalScore += score
-         
         }
-        
         return totalScore
     }
 }
-    
-    
+
+
 
 

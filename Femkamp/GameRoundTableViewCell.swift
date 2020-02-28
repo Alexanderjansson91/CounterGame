@@ -13,7 +13,7 @@ class GameRoundTableViewCell: UITableViewCell {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper? 
     
-
+    
     var index: IndexPath?
     var player : Player?
     
@@ -21,8 +21,8 @@ class GameRoundTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         /*
-        This my Tableviewcell for the gameround
-        */
+         This my Tableviewcell for the gameround
+         */
         
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

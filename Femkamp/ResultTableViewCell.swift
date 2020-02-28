@@ -20,19 +20,19 @@ class ResultTableViewCell: UITableViewCell {
         
         /*
          This my Tableviewcell for th finalscore
-        */
+         */
         
         
         //set the label to players finalscore
         finalScoreLabel.text = "\(String(describing: player?.score))"
-
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-   
     
-
+    
+    
 }

@@ -9,20 +9,20 @@
 import UIKit
 
 class ScoreForEachRoundTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var scoreforEachRoundLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
-       /*
-        This my Tableviewcell for the finalresualt for each gameround.
-        */
+        /*
+         This my Tableviewcell for the finalresualt for each gameround.
+         */
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

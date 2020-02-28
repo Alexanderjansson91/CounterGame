@@ -9,21 +9,21 @@
 import UIKit
 
 class HighScoreTableViewCell: UITableViewCell {
-
+    
     var player : Player?
     @IBOutlet weak var highScoreLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         /*
          This my Tableviewcell for my Higshcore
          */
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
 }
