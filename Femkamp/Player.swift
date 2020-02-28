@@ -22,6 +22,7 @@ class Player : CustomStringConvertible, Comparable{
         self.score=score
         
     }
+    
     //makes Player class sortable
     static func < (lhs: Player, rhs: Player) -> Bool {
         return lhs.score > rhs.score

@@ -132,7 +132,7 @@
 				5880E05B23F3FEE700BA75D7 /* CELLS */,
 				5880E05C23F3FF7600BA75D7 /* ViewControllers */,
 				58B86B2323FAEFF100819FD7 /* Pop Up */,
-				5880E05D23F3FFDF00BA75D7 /* module */,
+				5880E05D23F3FFDF00BA75D7 /* modle */,
 				583EE48A23D0F2B600E0F416 /* Main.storyboard */,
 				583EE48D23D0F2B900E0F416 /* Assets.xcassets */,
 				583EE48F23D0F2B900E0F416 /* LaunchScreen.storyboard */,
@@ -178,18 +178,18 @@
 				580FCAE523EC57940058E978 /* AddCompetitionViewController.swift */,
 				5868887923E313600039194D /* GameViewController.swift */,
 				58940E1723EAC784005E0940 /* FinalResultViewController.swift */,
+				5885BBB82405AAB900B444A4 /* UIButtonExtension.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		5880E05D23F3FFDF00BA75D7 /* module */ = {
+		5880E05D23F3FFDF00BA75D7 /* modle */ = {
 			isa = PBXGroup;
 			children = (
 				583EE4B423D0F30500E0F416 /* Player.swift */,
 				581C3C9823D5A9260066AC18 /* Competitions.swift */,
-				5885BBB82405AAB900B444A4 /* UIButtonExtension.swift */,
 			);
-			name = module;
+			name = modle;
 			sourceTree = "<group>";
 		};
 		58B86B2323FAEFF100819FD7 /* Pop Up */ = {
