@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		580FCAE623EC57940058E978 /* AddCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580FCAE523EC57940058E978 /* AddCompetitionViewController.swift */; };
-		5813070F23F57E99001F1987 /* PlayerEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813070E23F57E99001F1987 /* PlayerEntry.swift */; };
 		581C3C9923D5A9260066AC18 /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C3C9823D5A9260066AC18 /* Competitions.swift */; };
-		581C3C9B23D5D0AC0066AC18 /* ResualtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */; };
 		582D3CDD23EB112600101820 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D3CDC23EB112600101820 /* ResultTableViewCell.swift */; };
 		58357B36240001A9002ABF32 /* FinalResultPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58357B35240001A9002ABF32 /* FinalResultPopUpViewController.swift */; };
 		583B506D23D9C84F007F7E00 /* ChooiceCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B506C23D9C84F007F7E00 /* ChooiceCompetition.swift */; };
 		583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE48423D0F2B600E0F416 /* AppDelegate.swift */; };
 		583EE48723D0F2B600E0F416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE48623D0F2B600E0F416 /* SceneDelegate.swift */; };
-		583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EE48823D0F2B600E0F416 /* ViewController.swift */; };
 		583EE48C23D0F2B600E0F416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583EE48A23D0F2B600E0F416 /* Main.storyboard */; };
 		583EE48E23D0F2B900E0F416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 583EE48D23D0F2B900E0F416 /* Assets.xcassets */; };
 		583EE49123D0F2B900E0F416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583EE48F23D0F2B900E0F416 /* LaunchScreen.storyboard */; };
@@ -32,7 +29,6 @@
 		589D482A240020D500401ACF /* ScoreForEachRoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D4829240020D500401ACF /* ScoreForEachRoundTableViewCell.swift */; };
 		58B86B2223FAEFE600819FD7 /* HighscorePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2123FAEFE600819FD7 /* HighscorePopUpViewController.swift */; };
 		58B86B2523FAF25600819FD7 /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2423FAF25600819FD7 /* HighScoreTableViewCell.swift */; };
-		58B86B2723FB0C4A00819FD7 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86B2623FB0C4A00819FD7 /* Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,16 +50,13 @@
 
 /* Begin PBXFileReference section */
 		580FCAE523EC57940058E978 /* AddCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompetitionViewController.swift; sourceTree = "<group>"; };
-		5813070E23F57E99001F1987 /* PlayerEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntry.swift; sourceTree = "<group>"; };
 		581C3C9823D5A9260066AC18 /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
-		581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResualtViewController.swift; sourceTree = "<group>"; };
 		582D3CDC23EB112600101820 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		58357B35240001A9002ABF32 /* FinalResultPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultPopUpViewController.swift; sourceTree = "<group>"; };
 		583B506C23D9C84F007F7E00 /* ChooiceCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooiceCompetition.swift; sourceTree = "<group>"; };
 		583EE48123D0F2B600E0F416 /* Femkamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Femkamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583EE48423D0F2B600E0F416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		583EE48623D0F2B600E0F416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		583EE48823D0F2B600E0F416 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		583EE48B23D0F2B600E0F416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		583EE48D23D0F2B900E0F416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		583EE49023D0F2B900E0F416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +77,6 @@
 		589D4829240020D500401ACF /* ScoreForEachRoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreForEachRoundTableViewCell.swift; sourceTree = "<group>"; };
 		58B86B2123FAEFE600819FD7 /* HighscorePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscorePopUpViewController.swift; sourceTree = "<group>"; };
 		58B86B2423FAF25600819FD7 /* HighScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewCell.swift; sourceTree = "<group>"; };
-		58B86B2623FB0C4A00819FD7 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +137,6 @@
 				583EE48D23D0F2B900E0F416 /* Assets.xcassets */,
 				583EE48F23D0F2B900E0F416 /* LaunchScreen.storyboard */,
 				583EE49223D0F2B900E0F416 /* Info.plist */,
-				5813070E23F57E99001F1987 /* PlayerEntry.swift */,
-				58B86B2623FB0C4A00819FD7 /* Shared.swift */,
-				581C3C9A23D5D0AC0066AC18 /* ResualtViewController.swift */,
-				583EE48823D0F2B600E0F416 /* ViewController.swift */,
 			);
 			path = Femkamp;
 			sourceTree = "<group>";
@@ -347,10 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				580FCAE623EC57940058E978 /* AddCompetitionViewController.swift in Sources */,
-				5813070F23F57E99001F1987 /* PlayerEntry.swift in Sources */,
 				5846190E23E8546300DC635A /* GameRoundTableViewCell.swift in Sources */,
 				58940E1823EAC784005E0940 /* FinalResultViewController.swift in Sources */,
-				58B86B2723FB0C4A00819FD7 /* Shared.swift in Sources */,
 				583B506D23D9C84F007F7E00 /* ChooiceCompetition.swift in Sources */,
 				583EE4B523D0F30500E0F416 /* Player.swift in Sources */,
 				58B86B2523FAF25600819FD7 /* HighScoreTableViewCell.swift in Sources */,
@@ -358,14 +344,12 @@
 				5876016823DF1855005033B9 /* TeamNamesViewController.swift in Sources */,
 				584D0D3F240404A300150826 /* ConfirmGamePopUpViewController.swift in Sources */,
 				5885BBB92405AAB900B444A4 /* UIButtonExtension.swift in Sources */,
-				583EE48923D0F2B600E0F416 /* ViewController.swift in Sources */,
 				5868887A23E313600039194D /* GameViewController.swift in Sources */,
 				583EE48523D0F2B600E0F416 /* AppDelegate.swift in Sources */,
 				58B86B2223FAEFE600819FD7 /* HighscorePopUpViewController.swift in Sources */,
 				583EE48723D0F2B600E0F416 /* SceneDelegate.swift in Sources */,
 				581C3C9923D5A9260066AC18 /* Competitions.swift in Sources */,
 				582D3CDD23EB112600101820 /* ResultTableViewCell.swift in Sources */,
-				581C3C9B23D5D0AC0066AC18 /* ResualtViewController.swift in Sources */,
 				58357B36240001A9002ABF32 /* FinalResultPopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
